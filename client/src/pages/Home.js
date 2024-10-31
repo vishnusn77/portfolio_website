@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import Projects from '../components/Projects'; // Import the Projects component
 import About from '../components/About'; // Import the About component
+import Contact from '../components/Contact';
 import background from '../assets/background_3.jpg';
 
 const Home = () => {
@@ -64,6 +65,7 @@ const Home = () => {
 
             {/* About Section */}
             <About />
+            <Contact />
         </div>
     );
 };

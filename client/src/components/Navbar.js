@@ -4,6 +4,11 @@ import logo from '../assets/vishnu_logo.png';
 const Navbar = () => {
     const [showNavbar, setShowNavbar] = useState(true);
 
+    // Smooth scroll function
+    const handleScrollToSection = (sectionId) => {
+        document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    };
+
     useEffect(() => {
         let lastScrollY = window.scrollY;
 
@@ -30,12 +35,32 @@ const Navbar = () => {
             {/* Logo or Brand Name */}
             <img src={logo} alt="Brand Logo" className="w-16 h-auto mb-4" />
             
-            {/* Navigation Links */}
+            {/* Navigation Links with Smooth Scroll */}
             <div className="flex gap-8">
-                <a href="#home" className="hover:text-[#0FFCBE] transition">Home</a>
-                <a href="#projects" className="hover:text-[#0FFCBE] transition">Projects</a>
-                <a href="#about" className="hover:text-[#0FFCBE] transition">About</a>
-                <a href="#contact" className="hover:text-[#0FFCBE] transition">Contact</a>
+                <button 
+                    onClick={() => handleScrollToSection('home-section')} 
+                    className="hover:text-[#0FFCBE] transition"
+                >
+                    Home
+                </button>
+                <button 
+                    onClick={() => handleScrollToSection('projects-section')} 
+                    className="hover:text-[#0FFCBE] transition"
+                >
+                    Projects
+                </button>
+                <button 
+                    onClick={() => handleScrollToSection('about-section')} 
+                    className="hover:text-[#0FFCBE] transition"
+                >
+                    About
+                </button>
+                <button 
+                    onClick={() => handleScrollToSection('contact-section')} 
+                    className="hover:text-[#0FFCBE] transition"
+                >
+                    Contact
+                </button>
             </div>
         </nav>
     );
