@@ -1,18 +1,25 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Projects from '../components/Projects'; // Import the Projects component
+import About from '../components/About'; // Import the About component
 import background from '../assets/background_3.jpg';
 
 const Home = () => {
-    // Function to handle showing Projects on button click
+    // Function to scroll to the Projects section
     const handleViewProjects = () => {
         document.getElementById('projects-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
+
+    // Function to scroll to the About section
+    const handleViewAbout = () => {
+        document.getElementById('about-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
     };
 
     return (
         <div
             className="min-h-screen flex flex-col items-center text-center relative"
             style={{
+                backgroundColor: '#000020',
                 backgroundImage: `url(${background})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
@@ -52,8 +59,11 @@ const Home = () => {
                 </button>
             </div>
 
-            {/* Projects Section */}
-            <Projects />
+            {/* Projects Section with More About Me button */}
+            <Projects handleViewAbout={handleViewAbout} />
+
+            {/* About Section */}
+            <About />
         </div>
     );
 };
