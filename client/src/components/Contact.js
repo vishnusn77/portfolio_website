@@ -1,6 +1,46 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Contact = () => {
+    const [formData, setFormData] = useState({
+        firstName: '',
+        lastName: '',
+        email: '',
+        message: ''
+    });
+    const [statusMessage, setStatusMessage] = useState('');
+
+    // Function to handle form input changes
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prevData) => ({ ...prevData, [name]: value }));
+    };
+
+    // Function to submit the form
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await fetch('http://localhost:5000/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    name: `${formData.firstName} ${formData.lastName}`,
+                    email: formData.email,
+                    message: formData.message
+                })
+            });
+            const data = await response.json();
+            if (response.ok) {
+                setStatusMessage('Message sent successfully!');
+                setFormData({ firstName: '', lastName: '', email: '', message: '' });
+            } else {
+                setStatusMessage('Failed to send message. Please try again later.');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            setStatusMessage('Failed to send message. Please try again later.');
+        }
+    };
+
     // Function to scroll to the top of the home page
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -11,24 +51,32 @@ const Contact = () => {
             <div className="w-full max-w-lg bg-white bg-opacity-90 rounded-lg shadow-lg p-8">
                 <h2 className="text-4xl font-bold text-center mb-2">Contact Me</h2>
                 <br />
-                
-                <form className="space-y-4">
+
+                <form onSubmit={handleSubmit} className="space-y-4">
                     {/* Full Name */}
                     <div className="flex space-x-4">
                         <div className="flex-1">
                             <label className="block text-sm text-gray-600 text-left">First Name</label>
                             <input
                                 type="text"
+                                name="firstName"
+                                value={formData.firstName}
+                                onChange={handleChange}
                                 className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500"
                                 placeholder="First Name"
+                                required
                             />
                         </div>
                         <div className="flex-1">
                             <label className="block text-sm text-gray-600 text-left">Last Name</label>
                             <input
                                 type="text"
+                                name="lastName"
+                                value={formData.lastName}
+                                onChange={handleChange}
                                 className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500"
                                 placeholder="Last Name"
+                                required
                             />
                         </div>
                     </div>
@@ -38,8 +86,12 @@ const Contact = () => {
                         <label className="block text-sm text-gray-600 text-left">E-mail</label>
                         <input
                             type="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleChange}
                             className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500"
                             placeholder="example@example.com"
+                            required
                         />
                     </div>
 
@@ -47,9 +99,13 @@ const Contact = () => {
                     <div>
                         <label className="block text-sm text-gray-600 text-left">Message</label>
                         <textarea
+                            name="message"
+                            value={formData.message}
+                            onChange={handleChange}
                             className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500"
                             placeholder="Your message"
                             rows="4"
+                            required
                         ></textarea>
                     </div>
 
@@ -62,9 +118,12 @@ const Contact = () => {
                             SUBMIT
                         </button>
                     </div>
+
+                    {/* Status Message */}
+                    {statusMessage && <p className="text-center text-sm mt-4">{statusMessage}</p>}
                 </form>
             </div>
-            
+
             {/* Go Back to Top Button */}
             <button 
                 onClick={scrollToTop} 
