@@ -10,15 +10,13 @@ const Navbar = () => {
     };
 
     useEffect(() => {
-        let lastScrollY = window.scrollY;
-
         const handleScroll = () => {
-            if (window.scrollY > lastScrollY && window.scrollY > 100) {
-                setShowNavbar(false); // Hide navbar on scroll down
+            // Only show the navbar when the user is at the top of the page (scrollY is 0)
+            if (window.scrollY === 0) {
+                setShowNavbar(true);
             } else {
-                setShowNavbar(true); // Show navbar on scroll up
+                setShowNavbar(false);
             }
-            lastScrollY = window.scrollY;
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -27,10 +25,10 @@ const Navbar = () => {
 
     return (
         <nav
-            className={`w-full text-white flex justify-between items-center py-4 px-8 fixed top-0 left-0 transition-transform duration-300 ${
-                showNavbar ? 'translate-y-0' : '-translate-y-full'
+            className={`w-full text-white flex justify-between items-center py-4 px-8 fixed top-0 left-0 transition-opacity duration-300 ${
+                showNavbar ? 'opacity-100' : 'opacity-0'
             }`}
-            style={{ backgroundColor: 'transparent' }}
+            style={{ backgroundColor: 'transparent', pointerEvents: showNavbar ? 'auto' : 'none' }}
         >
             {/* Logo or Brand Name */}
             <img src={logo} alt="Brand Logo" className="w-16 h-auto mb-4" />

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import ProjectModal from './ProjectModal';
-import sample1 from '../assets/sample_1.jpg';
-import sample2 from '../assets/sample_2.jpg';
-import sample3 from '../assets/sample_3.jpg';
+import sample1 from '../assets/template.jpg';
+import sample2 from '../assets/template.jpg';
+import sample3 from '../assets/template.jpg';
 import background from '../assets/background_8.jpg';
 
 const Projects = ({ handleViewAbout }) => {
@@ -82,7 +82,7 @@ const Projects = ({ handleViewAbout }) => {
             <h2 className="text-4xl font-bold mb-8">My Projects</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl px-6">
                 {projects.map((project, index) => (
-                    <div key={index} className="bg-[#106EBE] bg-opacity-80 rounded-lg p-6 shadow-md flex flex-col justify-between">
+                    <div key={index} className="bg-[#106EBE] bg-opacity-60 rounded-lg p-6 shadow-md flex flex-col justify-between">
                         <h3 className="text-2xl font-semibold mb-4">{project.title}</h3>
                         
                         <p className="text-justify h-18 overflow-hidden">{project.description}</p>
@@ -102,14 +102,13 @@ const Projects = ({ handleViewAbout }) => {
                             </button>
 
                             {/* Try It Out Button */}
-                            <a 
-                                href={project.link} 
-                                target="_blank" 
-                                rel="noopener noreferrer" 
+                            <button
+                                //onClick={() => window.open(project.link, '_blank', 'noopener,noreferrer')}
                                 className="px-4 py-2 bg-[#0e5ca4] text-white font-semibold rounded-lg shadow-md hover:bg-[#0c5090] transition"
                             >
                                 Try It Out
-                            </a>
+                            </button>
+
                         </div>
                     </div>
                 ))}

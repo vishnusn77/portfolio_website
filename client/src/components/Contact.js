@@ -28,7 +28,7 @@ const Contact = () => {
                     message: formData.message
                 })
             });
-            const data = await response.json();
+            //const data = await response.json();
             if (response.ok) {
                 setStatusMessage('Message sent successfully!');
                 setFormData({ firstName: '', lastName: '', email: '', message: '' });
@@ -48,15 +48,21 @@ const Contact = () => {
 
     return (
         <section id="contact-section" className="min-h-screen flex flex-col items-center justify-center py-16 px-4 text-gray-900">
-            <div className="w-full max-w-lg bg-white bg-opacity-90 rounded-lg shadow-lg p-8">
-                <h2 className="text-4xl font-bold text-center mb-2">Contact Me</h2>
+           <div 
+                className="w-full max-w-lg rounded-lg shadow-lg p-8" 
+                style={{
+                    backgroundColor: '#106EBE', // Updated background color
+                    opacity: 0.88, // Optional: Adjust opacity if needed for a lighter effect
+                }}
+            >
+                <h2 className="text-white text-4xl font-bold text-center mb-2">Contact Me</h2>
                 <br />
 
                 <form onSubmit={handleSubmit} className="space-y-4">
                     {/* Full Name */}
                     <div className="flex space-x-4">
                         <div className="flex-1">
-                            <label className="block text-sm text-gray-600 text-left">First Name</label>
+                            <label className="block text-sm text-white text-left">First Name</label>
                             <input
                                 type="text"
                                 name="firstName"
@@ -68,7 +74,7 @@ const Contact = () => {
                             />
                         </div>
                         <div className="flex-1">
-                            <label className="block text-sm text-gray-600 text-left">Last Name</label>
+                            <label className="block text-sm text-white text-left">Last Name</label>
                             <input
                                 type="text"
                                 name="lastName"
@@ -83,7 +89,7 @@ const Contact = () => {
 
                     {/* Email */}
                     <div>
-                        <label className="block text-sm text-gray-600 text-left">E-mail</label>
+                        <label className="block text-sm text-white text-left">E-mail</label>
                         <input
                             type="email"
                             name="email"
@@ -97,7 +103,7 @@ const Contact = () => {
 
                     {/* Message */}
                     <div>
-                        <label className="block text-sm text-gray-600 text-left">Message</label>
+                        <label className="block text-sm text-white text-left">Message</label>
                         <textarea
                             name="message"
                             value={formData.message}
