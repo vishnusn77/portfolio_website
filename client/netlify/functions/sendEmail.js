@@ -14,7 +14,7 @@ exports.handler = async (event) => {
 
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_USER, // Your email or recipient's email
+      to: process.env.RECEIVER_EMAIL, // Your email or recipient's email
       subject: `New Contact Form Submission from ${name}`,
       text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
     });
