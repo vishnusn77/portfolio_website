@@ -19,16 +19,22 @@ const Home = () => {
 
     return (
         <div
-            className="min-h-screen flex flex-col items-center text-center relative"
-            style={{
-                backgroundColor: '#000020',
-                backgroundImage: `url(${background})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat',
-                backgroundAttachment: 'fixed', // Keeps background fixed on scroll
-            }}
-        >
+            className="min-h-screen flex flex-col items-center text-center relative">
+                {/* Background Div */}
+            <div
+                id="background"
+                style={{
+                    backgroundImage: `url(${background})`,
+                    zIndex: -1,
+                    height: '100vh',
+                    width: '100vw',
+                    position: 'fixed',
+                    top: 0,
+                    left: 0,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                }}
+            ></div>
             {/* Navbar */}
             <Navbar />
 
