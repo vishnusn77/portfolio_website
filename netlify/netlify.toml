@@ -1,0 +1,8 @@
+[build]
+  base = "client" # Path to your React code
+  publish = "client/build" # Path to your React build output
+  command = "npm run build" # Build command
+
+[functions]
+  directory = "netlify/functions" # Directory for Netlify functions
+  node_bundler = "esbuild" # Recommended bundler for modern JavaScript
