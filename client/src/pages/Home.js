@@ -1,12 +1,24 @@
 import React from 'react';
+import { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
 import Projects from '../components/Projects'; // Import the Projects component
 import About from '../components/About'; // Import the About component
 import Contact from '../components/Contact';
+import placeholder from '../assets/placeholder.jpg';
 import background from '../assets/background_3.webp';
 import Chatbot from '../components/Chatbot';
 
 const Home = () => {
+    const [isLoaded, setIsLoaded] = useState(false); // Track if the high-res image has loaded
+
+    useEffect(() => {
+        const img = new Image();
+        img.src = background;
+        img.onload = () => setIsLoaded(true); // Once image loads, set isLoaded to true
+    }, []);
+
+
+
     // Function to scroll to the Projects section
     const handleViewProjects = () => {
         document.getElementById('projects-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -24,7 +36,7 @@ const Home = () => {
             <div
                 id="background"
                 style={{
-                    backgroundImage: `url(${background})`,
+                    backgroundImage: `url(${isLoaded ? background : placeholder})`,
                     zIndex: -1,
                     height: '100vh',
                     width: '100vw',

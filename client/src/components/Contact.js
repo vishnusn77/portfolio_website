@@ -68,7 +68,7 @@ const Contact = () => {
                                 name="firstName"
                                 value={formData.firstName}
                                 onChange={handleChange}
-                                className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500"
+                                className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 bg-white text-gray-900"
                                 placeholder="First Name"
                                 required
                             />
@@ -80,7 +80,7 @@ const Contact = () => {
                                 name="lastName"
                                 value={formData.lastName}
                                 onChange={handleChange}
-                                className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500"
+                                className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 bg-white text-gray-900"
                                 placeholder="Last Name"
                                 required
                             />
@@ -95,7 +95,7 @@ const Contact = () => {
                             name="email"
                             value={formData.email}
                             onChange={handleChange}
-                            className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500"
+                            className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 bg-white text-gray-900"
                             placeholder="example@example.com"
                             required
                         />
@@ -108,7 +108,7 @@ const Contact = () => {
                             name="message"
                             value={formData.message}
                             onChange={handleChange}
-                            className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500"
+                            className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 bg-white text-gray-900"
                             placeholder="Your message"
                             rows="4"
                             required
