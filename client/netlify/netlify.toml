@@ -4,5 +4,5 @@
   command = "npm run build" # Build command
 
 [functions]
-  directory = "netlify/functions" # Directory for Netlify functions
+  directory = "client/netlify/functions" # Directory for Netlify functions
   node_bundler = "esbuild" # Recommended bundler for modern JavaScript
