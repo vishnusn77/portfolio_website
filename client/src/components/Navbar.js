@@ -6,8 +6,13 @@ const Navbar = () => {
 
     // Smooth scroll function
     const handleScrollToSection = (sectionId) => {
-        document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+        const target = document.getElementById(sectionId);
+        if (target) {
+            // Ensure the target section is fully calculated
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
     };
+    
 
     useEffect(() => {
         const handleScroll = () => {
