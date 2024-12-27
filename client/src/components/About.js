@@ -1,5 +1,4 @@
 import React from 'react';
-import backgroundAbout from '../assets/background_8.jpg'; // Import the background image
 import profilePhoto from '../assets/photo.png'; // Import your profile photo
 
 // Import skill icons
@@ -30,7 +29,7 @@ const About = () => {
             id="about-section"
             className="min-h-screen bg-cover bg-center text-gray-900 w-full flex flex-col items-center py-16 px-4"
             style={{
-                backgroundImage: `url(${backgroundAbout})`,
+                backgroundImage: `url('https://res.cloudinary.com/dpt3vmgz8/image/upload/v1735259361/background_8_j72isd.jpg')`,
                 backgroundAttachment: 'fixed', // Keeps background fixed on scroll
             }}
         >
