@@ -33,8 +33,8 @@ const Projects = ({ handleViewAbout }) => {
         {
             title: 'Dream Journal',
             description: 'An app to record, organize, and explore your dreams, with cloud sync and offline access, to reflect on your subconscious.',
-            details: 'Dream Journal is a personalized mobile application that enables users to securely log, organize, and reflect on their dreams. With the added benefits of cloud synchronization and offline functionality, users can easily access their dream logs anytime, across multiple devices. The app also provides customizable features like categorization, tagging, and search functions, making it easier to find past entries. By leveraging Firebase for real-time sync and SQLite for local storage, Dream Journal combines the best of both online and offline capabilities, ensuring data persistence and availability. Built with React Native and TypeScript, the app delivers a responsive and smooth experience for users.',
-            technologies: ['React Native', 'TypeScript', 'Firebase', 'SQLite'],
+            details: 'Dream Journal is a personalized mobile application designed to help users securely log, organize, and reflect on their dreams with ease. The app ensures seamless access to dream entries through real-time cloud synchronization powered by Firebase, while offline functionality is supported by Room, providing reliable local storage. Users can categorize their dreams, add tags, and utilize a powerful search feature to quickly revisit specific entries, making it easy to uncover patterns and gain insights into their subconscious. Built with Kotlin and the Android SDK, the app combines robust performance, efficient data management, and an intuitive interface to deliver a smooth and dependable user experience.',
+            technologies: ['Kotlin', 'Android SDK', 'XML', 'Room', 'Firebase'],
             images: [
                 'https://res.cloudinary.com/dpt3vmgz8/image/upload/v1735260529/4_ws6pe1.png',
                 'https://res.cloudinary.com/dpt3vmgz8/image/upload/v1735260530/5_mnrn7l.png'
