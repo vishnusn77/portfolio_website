@@ -97,6 +97,10 @@ const Projects = ({ handleViewAbout }) => {
             style={{
                 backgroundImage: `url('https://res.cloudinary.com/dpt3vmgz8/image/upload/v1735259361/background_8_j72isd.jpg')`,
                 backgroundAttachment: 'fixed', // Keeps the background fixed during scroll
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                minHeight: '100vh',
             }}
         >
             <h2 className="text-4xl font-bold mb-8">My Projects</h2>

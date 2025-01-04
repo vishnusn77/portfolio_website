@@ -31,6 +31,10 @@ const About = () => {
             style={{
                 backgroundImage: `url('https://res.cloudinary.com/dpt3vmgz8/image/upload/v1735259361/background_8_j72isd.jpg')`,
                 backgroundAttachment: 'fixed', // Keeps background fixed on scroll
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                minHeight: '100vh',
             }}
         >
             {/* Top Section: Profile Picture, Name, and Introduction */}
