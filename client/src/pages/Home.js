@@ -1,8 +1,8 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
-import Projects from '../components/Projects'; // Import the Projects component
-import About from '../components/About'; // Import the About component
+import Projects from '../components/Projects';
+import About from '../components/About'; 
 import Contact from '../components/Contact';
 import Chatbot from '../components/Chatbot';
 
@@ -12,28 +12,25 @@ const highResImage =
   'https://res.cloudinary.com/dpt3vmgz8/image/upload/v1735259361/background_3_qyrtzf.webp';
 
 const Home = () => {
-  const [isLoaded, setIsLoaded] = useState(false); // Track if the high-res image has loaded
-  const [imageLoaded, setImageLoaded] = useState(false); // Ensure high-res image is fully loaded
+  const [isLoaded, setIsLoaded] = useState(false); 
+  const [imageLoaded, setImageLoaded] = useState(false); 
 
   useEffect(() => {
     const img = new Image();
     img.src = highResImage;
     img.onload = () => {
-      setImageLoaded(true); // Ensure the high-res image is loaded
-      setIsLoaded(true); // End lazy loading
+      setImageLoaded(true); 
+      setIsLoaded(true); 
     };
   }, []);
 
   return (
     <div className="min-h-screen flex flex-col items-center text-center relative">
-      {/* Splash Screen */}
       {!isLoaded && (
         <div className="fixed inset-0 flex items-center justify-center bg-black z-50">
           <div className="text-white text-lg font-bold animate-pulse">Loading...</div>
         </div>
       )}
-
-      {/* Background Div */}
       <div
         id="background"
         style={{
@@ -48,13 +45,8 @@ const Home = () => {
           backgroundPosition: 'center',
         }}
       ></div>
-
-      {/* Navbar */}
       <Navbar />
-
-      {/* Main Content */}
       <div className="flex flex-col items-center justify-center min-h-screen px-6">
-        {/* Title with Animation */}
         <h1
           className="text-5xl font-bold mb-4 fade-in-title"
           style={{
@@ -65,18 +57,12 @@ const Home = () => {
         >
           Hi, I'm VISHNU NAIR
         </h1>
-
-        {/* Divider Line */}
         <div className="w-24 h-0.5 bg-[#F0F0F0] opacity-50 mb-4 fade-in-divider"></div>
-
-        {/* Subtitle with Animation */}
         <div className="max-w-4xl bg-gradient-to-r from-black/40 to-black/10 rounded-lg p-6 mb-8 fade-in-subtitle">
           <p className="text-lg md:text-xl leading-relaxed text-[#F0F0F0]">
             I’m a software engineer specializing in full-stack development, mobile applications, and cloud solutions. Passionate about building impactful, user-friendly applications and exploring innovative uses of AI to solve real-world challenges. Open to new projects and collaborations!
           </p>
         </div>
-
-        {/* Call-to-Action Button */}
         <button
           onClick={() =>
             document

@@ -96,7 +96,7 @@ const Projects = ({ handleViewAbout }) => {
             className="min-h-screen pt-16 pb-16 text-white w-full flex flex-col items-center bg-cover bg-center"
             style={{
                 backgroundImage: `url('https://res.cloudinary.com/dpt3vmgz8/image/upload/v1735259361/background_8_j72isd.jpg')`,
-                backgroundAttachment: 'fixed', // Keeps the background fixed during scroll
+                backgroundAttachment: 'fixed',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
@@ -117,15 +117,12 @@ const Projects = ({ handleViewAbout }) => {
                         </div>
 
                         <div className="mt-4 flex space-x-2">
-                            {/* View Details Button */}
                             <button 
                                 onClick={() => openModal(project)} 
                                 className="px-4 py-2 bg-white text-[#106EBE] font-semibold rounded-lg shadow-md hover:bg-gray-200 transition"
                             >
                                 View Details
                             </button>
-
-                            {/* Try It Out Button */}
                             <button
                                 onClick={() => window.open(project.link, '_blank', 'noopener,noreferrer')}
                                 className="px-4 py-2 bg-[#0e5ca4] text-white font-semibold rounded-lg shadow-md hover:bg-[#0c5090] transition"
@@ -137,16 +134,12 @@ const Projects = ({ handleViewAbout }) => {
                     </div>
                 ))}
             </div>
-
-            {/* More About Me Button */}
             <button
                 onClick={handleViewAbout}
                 className="mt-10 px-6 py-3 bg-white text-[#106EBE] font-semibold rounded-full shadow-md hover:bg-gray-200 transition transform hover:scale-105"
             >
                 More About Me
             </button>
-
-            {/* Modal */}
             {isModalOpen && selectedProject && (
                 <ProjectModal project={selectedProject} isOpen={isModalOpen} onClose={closeModal} />
             )}

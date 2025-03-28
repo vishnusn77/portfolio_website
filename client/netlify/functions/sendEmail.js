@@ -5,16 +5,16 @@ exports.handler = async (event) => {
     const { name, email, message } = JSON.parse(event.body);
 
     const transporter = nodemailer.createTransport({
-      service: 'gmail', // Use the appropriate email service
+      service: 'gmail', 
       auth: {
-        user: process.env.EMAIL_USER,  // Add this environment variable in Netlify
-        pass: process.env.EMAIL_PASS,  // Add this environment variable in Netlify
+        user: process.env.EMAIL_USER,  
+        pass: process.env.EMAIL_PASS,  
       },
     });
 
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
-      to: process.env.RECEIVER_EMAIL, // Your email or recipient's email
+      to: process.env.RECEIVER_EMAIL,
       subject: `New Contact Form Submission from ${name}`,
       text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
     });

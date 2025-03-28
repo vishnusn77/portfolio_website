@@ -1,11 +1,8 @@
 import React from 'react';
-import profilePhoto from '../assets/photo.png'; // Import your profile photo
-
-// Import skill icons
+import profilePhoto from '../assets/photo.png'; 
 import pythonIcon from '../assets/skills icons/python.png';
 import jsIcon from '../assets/skills icons/js.png';
 import nodejsIcon from '../assets/skills icons/nodejs.png';
-//import tsIcon from '../assets/skills icons/typescript.png';
 import cssIcon from '../assets/skills icons/css.png';
 import mysqlIcon from '../assets/skills icons/mysql.png';
 import kotlinIcon from '../assets/skills icons/kotlin.png';
@@ -19,7 +16,6 @@ import azureIcon from '../assets/skills icons/azure.png';
 import awsIcon from '../assets/skills icons/aws.png';
 import postgresIcon from '../assets/skills icons/postgresql.png';
 import mongoIcon from '../assets/skills icons/mongo.png';
-
 import linkedinIcon from '../assets/skills icons/linkedin.png';
 import githubIcon from '../assets/skills icons/github.png';
 
@@ -30,23 +26,20 @@ const About = () => {
             className="min-h-screen bg-cover bg-center text-gray-900 w-full flex flex-col items-center py-16 px-4"
             style={{
                 backgroundImage: `url('https://res.cloudinary.com/dpt3vmgz8/image/upload/v1735259361/background_8_j72isd.jpg')`,
-                backgroundAttachment: 'fixed', // Keeps background fixed on scroll
+                backgroundAttachment: 'fixed', 
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
                 minHeight: '100vh',
             }}
         >
-            {/* Top Section: Profile Picture, Name, and Introduction */}
             <div
                 className="flex flex-col md:flex-row items-center rounded-lg shadow-lg p-8 max-w-4xl w-full mb-12"
                 style={{
-                    backgroundColor: 'rgba(16, 110, 190, 0.6)', // Updated with RGBA for opacity
+                    backgroundColor: 'rgba(16, 110, 190, 0.6)',
                     borderRadius: '15px',
                 }}
             >
-
-                {/* Profile Picture */}
                 <div className="flex flex-col items-center md:w-1/3 mb-6 md:mb-0">
                     <img 
                         src={profilePhoto} 
@@ -55,29 +48,21 @@ const About = () => {
                     />
                     <h3 className="text-3xl font-bold text-gray-900" style={{color: '#ffffff'}}>Vishnu Nair</h3>
                 </div>
-
-                {/* Introduction */}
                 <div className="md:w-2/3 text-center md:text-left">
                     <p className="text-lg leading-relaxed text-gray-800" style={{color: '#ffffff'}}>
                     With a strong foundation in computer science and several years of hands-on experience, I’ve built solutions that connect user needs with technology. My experience spans full-stack development for web and mobile, with a focus on AI insights and cloud integration. I believe in writing clean, efficient code that enhances user experience.
                     </p>
-
-                     {/* Buttons Section */}
                      <div className="flex justify-center md:justify-start mt-6 space-x-4">
-                    
-                        {/* LinkedIn Button */}
                         <a
-                            href="https://www.linkedin.com/in/vishnu-nair2766/" // Replace with your LinkedIn profile URL
+                            href="https://www.linkedin.com/in/vishnu-nair2766/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center px-4 py-2 bg-[#106EBE] text-white font-semibold rounded-lg shadow-md hover:bg-[#0c5090] transition"
                         >
                             <img src={linkedinIcon} alt="LinkedIn" className="inline w-5 h-5 mr-2" />Linkedin
                         </a>
-
-                        {/* GitHub Button */}
                         <a
-                            href="https://github.com/vishnusn77" // Replace with your GitHub profile URL
+                            href="https://github.com/vishnusn77"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center px-4 py-2 bg-[#106EBE] text-white font-semibold rounded-lg shadow-md hover:bg-[#0c5090] transition"
@@ -87,11 +72,8 @@ const About = () => {
                     </div>
                 </div>
             </div>
-
-            {/* Skills Section */}
             <h3 className="text-2xl font-semibold text-white mb-8">My skills</h3>
             <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8 gap-6 max-w-6xl w-full px-4">
-                {/* Skill Icons with Circular Background */}
                 <div className="flex flex-col items-center text-white">
                     <div className="flex items-center justify-center w-16 h-16 bg-white bg-opacity-60 rounded-full mb-2">
                         <img src={pythonIcon} alt="Python" className="w-8 h-8" />
@@ -190,7 +172,6 @@ const About = () => {
                     <p className="text-sm">MongoDB</p>
                 </div>
             </div>
-            {/* Contact Me Button */}
             <div className="mt-12">
                 <button 
                     onClick={() => document.getElementById('contact-section').scrollIntoView({ behavior: 'smooth' })}

@@ -45,22 +45,19 @@ html {
   }
 }
 
-/* Animation for title */
 .fade-in-title {
   opacity: 0;
   transform: translateY(-20px);
   animation: fadeInUp 0.8s ease-in-out forwards;
 }
 
-/* Animation for subtitle */
 .fade-in-subtitle {
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 1s ease-in-out forwards;
-  animation-delay: 0.3s; /* Adds a slight delay for a staggered effect */
+  animation-delay: 0.3s;
 }
 
-/* Keyframes for fade-in up effect */
 @keyframes fadeInUp {
   from {
       opacity: 0;
@@ -72,15 +69,13 @@ html {
   }
 }
 
-/* Animation for divider line */
 .fade-in-divider {
   opacity: 0;
   transform: scaleX(0);
   animation: fadeInDivider 0.8s ease-in-out forwards;
-  animation-delay: 0.2s; /* Optional delay for a staggered effect */
+  animation-delay: 0.2s; 
 }
 
-/* Keyframes for fade-in divider effect */
 @keyframes fadeInDivider {
   from {
       opacity: 0;
@@ -92,15 +87,13 @@ html {
   }
 }
 
-/* Animation for "View My Work" button */
 .fade-in-button {
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInButton 0.8s ease-in-out forwards;
-  animation-delay: 0.4s; /* Slight delay after subtitle animation */
+  animation-delay: 0.4s; 
 }
 
-/* Keyframes for button animation */
 @keyframes fadeInButton {
   from {
       opacity: 0;
@@ -132,15 +125,13 @@ html {
   opacity: 1;
 }
 
-
-/* Splash screen styling */
 .splash-screen {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #000020; /* Match the main background color */
+  background-color: #000020; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -149,7 +140,6 @@ html {
   transition: opacity 0.5s ease;
 }
 
-/* Loading dots animation */
 .loading-animation {
   display: flex;
   gap: 8px;
@@ -171,7 +161,6 @@ html {
   animation-delay: 0.4s;
 }
 
-/* Bouncing animation */
 @keyframes bounce {
   from {
       transform: translateY(0);
@@ -181,13 +170,11 @@ html {
   }
 }
 
-/* Fade out effect for splash screen */
 .hidden .splash-screen {
   opacity: 0;
   pointer-events: none;
 }
 
-/* Fade-in animation for main content */
 .fade-in {
   animation: fadeIn 1s ease forwards;
 }

@@ -73,7 +73,6 @@ const Chatbot = () => {
         }
     };
 
-    // Scroll to the latest message whenever a new message is added
     useEffect(() => {
         if (chatWindowRef.current) {
             chatWindowRef.current.scrollTop = chatWindowRef.current.scrollHeight;
@@ -82,15 +81,12 @@ const Chatbot = () => {
 
     return (
         <div className="fixed bottom-4 right-4 z-50">
-            {/* Chatbot Toggle Button with Custom Icon */}
             <button
                 onClick={toggleChat}
                 className="bg-white text-gray-800 rounded-full p-4 shadow-lg focus:outline-none hover:bg-gray-200 transition-transform duration-300 transform hover:scale-105"
             >
                 <img src={customIcon} alt="Chatbot" className="w-6 h-6" />
             </button>
-
-            {/* Chatbox */}
             <div
                 className={`transition-all duration-500 ease-in-out transform ${
                     isOpen ? 'scale-100 opacity-100 translate-y-0' : 'scale-0 opacity-0 translate-y-4'
@@ -102,7 +98,6 @@ const Chatbot = () => {
                     border: '1px solid #E0E0E0'
                 }}
             >
-                {/* Close Button */}
                 <button onClick={toggleChat} className="absolute top-0 right-0 p-1">
                     <img src={closeIcon} alt="Close" className="w-4 h-4" />
                 </button>

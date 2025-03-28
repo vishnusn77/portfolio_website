@@ -5,18 +5,16 @@ const Navbar = () => {
     const [showNavbar, setShowNavbar] = useState(true);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-    // Smooth scroll function
     const handleScrollToSection = (sectionId) => {
         const target = document.getElementById(sectionId);
         if (target) {
             target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            setIsMobileMenuOpen(false); // Close mobile menu on navigation
+            setIsMobileMenuOpen(false); 
         }
     };
 
     useEffect(() => {
         const handleScroll = () => {
-            // Only show the navbar when the user is at the top of the page (scrollY is 0)
             if (window.scrollY === 0) {
                 setShowNavbar(true);
             } else {
@@ -35,10 +33,7 @@ const Navbar = () => {
             }`}
             style={{ backgroundColor: 'transparent', pointerEvents: showNavbar ? 'auto' : 'none' }}
         >
-            {/* Logo or Brand Name */}
             <img src={logo} alt="Brand Logo" className="w-16 h-auto mb-4" />
-
-            {/* Hamburger Icon for Mobile */}
             <div className="sm:hidden">
                 <button
                     className="focus:outline-none"
@@ -60,8 +55,6 @@ const Navbar = () => {
                     </svg>
                 </button>
             </div>
-
-            {/* Navigation Links */}
             <div
                 className={`${
                     isMobileMenuOpen ? 'block' : 'hidden'

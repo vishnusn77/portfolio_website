@@ -7,7 +7,7 @@ const App = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        const timer = setTimeout(() => setLoading(false), 1000); // Adjust timing if needed
+        const timer = setTimeout(() => setLoading(false), 1000);
         return () => clearTimeout(timer);
     }, []);
 
@@ -26,7 +26,6 @@ const App = () => {
                 <Router>
                     <Routes>
                         <Route path="/" element={<Home />} />
-                        {/* Add other routes here for different pages */}
                     </Routes>
                 </Router>
             </div>

@@ -9,13 +9,11 @@ const Contact = () => {
     });
     const [statusMessage, setStatusMessage] = useState('');
 
-    // Function to handle form input changes
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData((prevData) => ({ ...prevData, [name]: value }));
     };
 
-    // Function to submit the form
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -28,7 +26,6 @@ const Contact = () => {
                     message: formData.message
                 })
             });
-            //const data = await response.json();
             if (response.ok) {
                 setStatusMessage('Message sent successfully!');
                 setFormData({ firstName: '', lastName: '', email: '', message: '' });
@@ -41,7 +38,6 @@ const Contact = () => {
         }
     };
 
-    // Function to scroll to the top of the home page
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
@@ -51,15 +47,14 @@ const Contact = () => {
            <div 
                 className="w-full max-w-lg rounded-lg shadow-lg p-8" 
                 style={{
-                    backgroundColor: '#106EBE', // Updated background color
-                    opacity: 0.88, // Optional: Adjust opacity if needed for a lighter effect
+                    backgroundColor: '#106EBE', 
+                    opacity: 0.88, 
                 }}
             >
                 <h2 className="text-white text-4xl font-bold text-center mb-2">Contact Me</h2>
                 <br />
 
                 <form onSubmit={handleSubmit} className="space-y-4">
-                    {/* Full Name */}
                     <div className="flex space-x-4">
                         <div className="flex-1">
                             <label className="block text-sm text-white text-left">First Name</label>
@@ -86,8 +81,6 @@ const Contact = () => {
                             />
                         </div>
                     </div>
-
-                    {/* Email */}
                     <div>
                         <label className="block text-sm text-white text-left">E-mail</label>
                         <input
@@ -100,8 +93,6 @@ const Contact = () => {
                             required
                         />
                     </div>
-
-                    {/* Message */}
                     <div>
                         <label className="block text-sm text-white text-left">Message</label>
                         <textarea
@@ -114,8 +105,6 @@ const Contact = () => {
                             required
                         ></textarea>
                     </div>
-
-                    {/* Submit Button */}
                     <div className="text-center">
                         <button
                             type="submit"
@@ -124,13 +113,9 @@ const Contact = () => {
                             SUBMIT
                         </button>
                     </div>
-
-                    {/* Status Message */}
                     {statusMessage && <p className="text-center text-sm mt-4">{statusMessage}</p>}
                 </form>
             </div>
-
-            {/* Go Back to Top Button */}
             <button 
                 onClick={scrollToTop} 
                 className="mt-8 px-8 py-4 bg-white text-[#106EBE] font-semibold rounded-full shadow-md hover:bg-gray-200 transition transform hover:scale-105"
