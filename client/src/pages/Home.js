@@ -5,7 +5,6 @@ import Projects from '../components/Projects';
 import About from '../components/About'; 
 import Contact from '../components/Contact';
 import Chatbot from '../components/Chatbot';
-import Aurora from '../react-bits-components/Aurora';
 import Squares from '../react-bits-components/Squares';
 
 const lowResImage =
@@ -42,12 +41,6 @@ const Home = () => {
           <div className="text-white text-lg font-bold animate-pulse">Loading...</div>
         </div>
       )}
-      <Aurora
-        colorStops={["#3A29FF", "#FF94B4", "#FF3232"]}
-        blend={0.5}
-        amplitude={1.0}
-        speed={0.5}
-      />
       <Navbar />
       <div className="flex flex-col items-center justify-center min-h-screen px-6">
         <h1
