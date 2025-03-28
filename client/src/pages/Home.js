@@ -42,33 +42,24 @@ const Home = () => {
         </div>
       )}
       <Navbar />
-      <div className="flex flex-col items-center justify-center min-h-screen px-6">
-        <h1
-          className="text-5xl font-bold mb-4 fade-in-title"
-          style={{
-            background: 'linear-gradient(90deg, #F0F0F0, #CCCCCC)',
-            WebkitBackgroundClip: 'text',
-            color: 'transparent',
-          }}
-        >
-          Hi, I'm VISHNU NAIR
-        </h1>
-        <div className="w-24 h-0.5 bg-[#F0F0F0] opacity-50 mb-4 fade-in-divider"></div>
-        <div className="max-w-4xl bg-gradient-to-r from-black/40 to-black/10 rounded-lg p-6 mb-8 fade-in-subtitle">
-          <p className="text-lg md:text-xl leading-relaxed text-[#F0F0F0]">
-            I’m a software engineer specializing in full-stack development, mobile applications, and cloud solutions. Passionate about building impactful, user-friendly applications and exploring innovative uses of AI to solve real-world challenges. Open to new projects and collaborations!
+      <div className="min-h-screen w-full flex items-center justify-center px-6">
+        <div className="max-w-3xl w-full flex flex-col items-center text-center gap-6 py-16">
+          
+          <h2 className="text-gray-400 text-lg">Hi, I'm Vishnu Nair</h2>
+
+          <h1 className="text-5xl md:text-6xl font-bold leading-tight text-white">
+            Full-Stack Developer
+          </h1>
+
+          <p className="text-gray-300 text-lg md:text-[1.25rem] leading-relaxed bg-white/5 backdrop-blur-md p-6 rounded-xl shadow-lg border border-white/10 w-full">
+            Full-stack developer creating seamless web & mobile experiences — from backend logic to polished UI.
           </p>
+
+          <div className="flex gap-4 pt-2">
+            {/* Optional: social icons here */}
+          </div>
+
         </div>
-        <button
-          onClick={() =>
-            document
-              .getElementById('projects-section')
-              .scrollIntoView({ behavior: 'smooth', block: 'start' })
-          }
-          className="mt-8 px-8 py-4 bg-white text-[#106EBE] font-semibold rounded-full shadow-md hover:bg-gray-200 transition transform hover:scale-105 fade-in-button"
-        >
-          View My Work
-        </button>
       </div>
       <Projects
         handleViewAbout={() =>
