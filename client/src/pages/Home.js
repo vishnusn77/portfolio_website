@@ -5,6 +5,8 @@ import Projects from '../components/Projects';
 import About from '../components/About'; 
 import Contact from '../components/Contact';
 import Chatbot from '../components/Chatbot';
+import Aurora from '../react-bits-components/Aurora';
+import Squares from '../react-bits-components/Squares';
 
 const lowResImage =
   'https://res.cloudinary.com/dpt3vmgz8/image/upload/v1735259359/placeholder_sedr4c.jpg';
@@ -26,25 +28,26 @@ const Home = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center text-center relative">
+      <div className="fixed inset-0 -z-10">
+        <Squares 
+          speed={0.3} 
+          squareSize={40}
+          direction='diagonal'
+          borderColor='#242424'
+          hoverFillColor='#292929'
+        />
+      </div>
       {!isLoaded && (
         <div className="fixed inset-0 flex items-center justify-center bg-black z-50">
           <div className="text-white text-lg font-bold animate-pulse">Loading...</div>
         </div>
       )}
-      <div
-        id="background"
-        style={{
-          backgroundImage: `url(${imageLoaded ? highResImage : lowResImage})`,
-          zIndex: -1,
-          height: '100vh',
-          width: '100vw',
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      ></div>
+      <Aurora
+        colorStops={["#3A29FF", "#FF94B4", "#FF3232"]}
+        blend={0.5}
+        amplitude={1.0}
+        speed={0.5}
+      />
       <Navbar />
       <div className="flex flex-col items-center justify-center min-h-screen px-6">
         <h1
