@@ -8,8 +8,25 @@ import Chatbot from '../components/Chatbot';
 import Squares from '../react-bits-components/Squares';
 import GradientText from '../react-bits-components/GradientText';
 import SplitText from '../react-bits-components/SplitText';
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
-import { SiGmail } from "react-icons/si";
+import LogoMarquee from '../react-bits-components/LogoMarquee';
+import { FaGithub, FaLinkedin, FaReact, FaNodeJs, FaDocker } from 'react-icons/fa';
+import { SiGmail, SiPostgresql, SiMongodb } from "react-icons/si";
+import pythonIcon from '../assets/skills icons/python.png';
+import jsIcon from '../assets/skills icons/js.png';
+import nodejsIcon from '../assets/skills icons/nodejs.png';
+import cssIcon from '../assets/skills icons/css.png';
+import mysqlIcon from '../assets/skills icons/mysql.png';
+import kotlinIcon from '../assets/skills icons/kotlin.png';
+import swiftIcon from '../assets/skills icons/swift.png';
+import htmlIcon from '../assets/skills icons/html.png';
+import cppIcon from '../assets/skills icons/cpp.png';
+import reactIcon from '../assets/skills icons/react.png';
+import angularIcon from '../assets/skills icons/angular.png';
+import dockerIcon from '../assets/skills icons/docker.png';
+import azureIcon from '../assets/skills icons/azure.png';
+import awsIcon from '../assets/skills icons/aws.png';
+import postgresIcon from '../assets/skills icons/postgresql.png';
+import mongoIcon from '../assets/skills icons/mongo.png';
 
 const lowResImage =
   'https://res.cloudinary.com/dpt3vmgz8/image/upload/v1735259359/placeholder_sedr4c.jpg';
@@ -29,6 +46,27 @@ const Home = () => {
     };
   }, []);
 
+  const skills = [
+    { icon: pythonIcon, label: 'Python' },
+    { icon: jsIcon, label: 'JavaScript' },
+    { icon: nodejsIcon, label: 'Node.js' },
+    { icon: cssIcon, label: 'CSS3' },
+    { icon: mysqlIcon, label: 'MySQL' },
+    { icon: kotlinIcon, label: 'Kotlin' },
+    { icon: swiftIcon, label: 'Swift' },
+    { icon: htmlIcon, label: 'HTML5' },
+    { icon: cppIcon, label: 'C++' },
+    { icon: reactIcon, label: 'React' },
+    { icon: angularIcon, label: 'Angular' },
+    { icon: dockerIcon, label: 'Docker' },
+    { icon: azureIcon, label: 'Azure' },
+    { icon: awsIcon, label: 'AWS' },
+    { icon: postgresIcon, label: 'PostgreSQL' },
+    { icon: mongoIcon, label: 'MongoDB' },
+    
+  ];
+  
+
   return (
     <div className="min-h-screen flex flex-col items-center text-center relative">
       <div className="fixed inset-0 -z-10">
@@ -46,7 +84,7 @@ const Home = () => {
         </div>
       )}
       <Navbar />
-      <div className="min-h-screen w-full flex items-center justify-center px-6">
+      <div className="min-h-screen w-full flex flex-col items-center justify-center px-6">
         <div className="max-w-3xl w-full flex flex-col items-center text-center gap-6 py-16">
           
           <h2 className="text-gray-400 text-xl">Hi, I'm Vishnu Nair</h2>
@@ -84,9 +122,10 @@ const Home = () => {
               </a>
             </div>
           </div>
-
         </div>
+        <LogoMarquee skills={skills} />
       </div>
+
       <Projects
         handleViewAbout={() =>
           document
