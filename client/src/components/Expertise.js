@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import TiltedCard from '../react-bits-components/TiltedCard';
 
 const expertiseItems = [
   {
@@ -45,6 +46,14 @@ const workflowSteps = [
     title: 'Test & Deploy',
     desc: 'Automated and manual testing, followed by cloud deployment using CI/CD pipelines.',
   },
+  {
+    title: 'Build & Iterate',
+    desc: 'Follow modular development, version control, and feedback-driven iterations.',
+  },
+  {
+    title: 'Build & Iterate',
+    desc: 'Follow modular development, version control, and feedback-driven iterations.',
+  },
 ];
 
 const ExpertiseItem = ({ title, description }) => {
@@ -76,30 +85,44 @@ const Expertise = () => {
     >
       <div className="max-w-5xl w-full flex flex-col md:flex-row gap-10">
         <div className="md:w-1/2 flex flex-col justify-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+        <h3 className="text-2xl font-bold text-white mb-6">
             What I Focus On
-          </h2>
+          </h3>
           {expertiseItems.map((item, index) => (
             <ExpertiseItem key={index} title={item.title} description={item.description} />
           ))}
         </div>
 
-        <div>
-          <h3 className="text-2xl font-bold text-white mb-6">My Workflow</h3>
-          <div className="flex flex-col gap-4">
-            {workflowSteps.map((step, idx) => (
-              <div
-                key={idx}
-                className="bg-white/5 border border-white/10 backdrop-blur-md p-4 rounded-2xl shadow-md hover:bg-white/10 transition-all"
-              >
-                <h4 className="text-[#40ffaa] font-semibold text-base tracking-wide">
-                  {step.title}
-                </h4>
-                <p className="text-gray-300 text-sm mt-1 leading-relaxed">{step.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+        <div className="md:w-1/2 flex flex-col">
+            <h3 className="text-2xl font-bold text-[#40ffaa] mb-6">
+                My Workflow
+            </h3>
+            <div className="flex items-center">
+                <TiltedCard
+                containerHeight="500px"
+                containerWidth="100%"
+                imageHeight="100%"
+                imageWidth="100%"
+                rotateAmplitude={10}
+                scaleOnHover={1.03}
+                showTooltip={false}
+                showMobileWarning={false}
+                displayOverlayContent={true}
+                overlayContent={
+                    <div className="p-6 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl w-full h-full text-left">
+                    <ul className="space-y-3 text-sm text-gray-200">
+                        {workflowSteps.map((step, idx) => (
+                        <li key={idx}>
+                            <p className="font-semibold text-white">{step.title}</p>
+                            <p className="text-gray-400">{step.desc}</p>
+                        </li>
+                        ))}
+                    </ul>
+                    </div>
+                }
+                />
+            </div>
+            </div>
       </div>
     </section>
   );
