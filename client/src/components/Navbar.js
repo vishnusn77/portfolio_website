@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import logo from '../assets/vishnu_logo.png';
+import ShinyText from '../react-bits-components/ShinyText';
 
 const Navbar = () => {
     const [showNavbar, setShowNavbar] = useState(true);
@@ -64,25 +65,45 @@ const Navbar = () => {
                     onClick={() => handleScrollToSection('home-section')}
                     className="hover:text-[#0FFCBE] transition px-4 sm:px-0 py-2 text-center"
                 >
-                    Home
+                    <ShinyText
+                        text="Home"
+                        speed={3}
+                        disabled={false}
+                        className="text-base"
+                    />
                 </button>
                 <button
                     onClick={() => handleScrollToSection('projects-section')}
                     className="hover:text-[#0FFCBE] transition px-4 sm:px-0 py-2 text-center"
                 >
-                    Projects
+                    <ShinyText
+                        text="Projects"
+                        speed={3}
+                        disabled={false}
+                        className="text-base"
+                    />
                 </button>
                 <button
                     onClick={() => handleScrollToSection('about-section')}
                     className="hover:text-[#0FFCBE] transition px-4 sm:px-0 py-2 text-center"
                 >
-                    About
+                    <ShinyText
+                        text="About"
+                        speed={3}
+                        disabled={false}
+                        className="text-base"
+                    />
                 </button>
                 <button
                     onClick={() => handleScrollToSection('contact-section')}
                     className="hover:text-[#0FFCBE] transition px-4 sm:px-0 py-2 text-center"
                 >
-                    Contact
+                    <ShinyText
+                        text="Contact"
+                        speed={3}
+                        disabled={false}
+                        className="text-base"
+                    />
                 </button>
             </div>
         </nav>

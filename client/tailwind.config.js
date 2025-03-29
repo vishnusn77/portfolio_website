@@ -13,10 +13,15 @@ module.exports = {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-50%)' },
         },
+        shine: {
+          '0%': { 'background-position': '100%' },
+          '100%': { 'background-position': '-100%' },
+        },
       },
       animation: {
         gradient: 'gradient 3s ease infinite',
         marquee: 'marquee 25s linear infinite',
+        shine: 'shine 3s linear infinite',
       },
     },
   },
