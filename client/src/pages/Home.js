@@ -5,6 +5,7 @@ import Projects from '../components/Projects';
 import About from '../components/About'; 
 import Contact from '../components/Contact';
 import Chatbot from '../components/Chatbot';
+import Expertise from '../components/Expertise';
 import Squares from '../react-bits-components/Squares';
 import GradientText from '../react-bits-components/GradientText';
 import SplitText from '../react-bits-components/SplitText';
@@ -125,7 +126,7 @@ const Home = () => {
         </div>
         <LogoMarquee skills={skills} />
       </div>
-
+      <Expertise />
       <Projects
         handleViewAbout={() =>
           document
