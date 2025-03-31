@@ -93,47 +93,44 @@ const Projects = ({ handleViewAbout }) => {
     return (
         <section
             id="projects-section"
-            className="min-h-screen pt-16 pb-16 text-white w-full flex flex-col items-center bg-cover bg-center"
-            style={{
-                backgroundImage: `url('https://res.cloudinary.com/dpt3vmgz8/image/upload/v1735259361/background_8_j72isd.jpg')`,
-                backgroundAttachment: 'fixed',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                minHeight: '100vh',
-            }}
+            className="min-h-screen pt-16 pb-16 text-white w-full flex flex-col items-center"
         >
             <h2 className="text-4xl font-bold mb-8">My Projects</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl px-6">
                 {projects.map((project, index) => (
-                    <div key={index} className="bg-[#106EBE] bg-opacity-60 rounded-lg p-6 shadow-md flex flex-col justify-between">
-                        <h3 className="text-2xl font-semibold mb-4">{project.title}</h3>
-                        
-                        <p className="text-justify h-18 overflow-hidden">{project.description}</p>
-                        
-                        <div className="mt-4 text-xs text-left">
-                            <span className="font-semibold inline">Built with: </span>
-                            <span className="inline">{project.technologies.join(', ')}</span>
-                        </div>
-
-                        <div className="mt-4 flex space-x-2">
-                            <button 
-                                onClick={() => openModal(project)} 
-                                className="px-4 py-2 bg-white text-[#106EBE] font-semibold rounded-lg shadow-md hover:bg-gray-200 transition"
-                            >
-                                View Details
-                            </button>
-                            <button
-                                onClick={() => window.open(project.link, '_blank', 'noopener,noreferrer')}
-                                className="px-4 py-2 bg-[#0e5ca4] text-white font-semibold rounded-lg shadow-md hover:bg-[#0c5090] transition"
-                            >
-                                Try It Out
-                            </button>
-
+                <div
+                    key={index}
+                    className="group bg-white/5 border border-white/10 backdrop-blur-md rounded-2xl overflow-hidden shadow-lg hover:bg-white/10 transition-all duration-300"
+                >                  
+                   <div className="overflow-hidden">
+                        <img
+                            src={project.images[0]}
+                            alt={project.title}
+                            className="w-full h-48 object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
+                        />
+                    </div>
+                    <div className="p-4 flex flex-col items-start justify-between h-full">
+                        <h3 className="text-xl font-semibold text-white mb-2">{project.title}</h3>
+                        <div className="mt-auto flex gap-2">
+                        <button
+                            onClick={() => openModal(project)}
+                            className="px-4 py-2 bg-[#40ffaa] text-black font-semibold rounded-lg hover:bg-[#32e6a8] transition"
+                        >
+                            View
+                        </button>
+                        <button
+                            onClick={() =>
+                            window.open(project.link, '_blank', 'noopener,noreferrer')
+                            }
+                            className="px-4 py-2 bg-white text-[#40ffaa] font-semibold rounded-lg hover:bg-gray-200 transition"
+                        >
+                            Try
+                        </button>
                         </div>
                     </div>
+                </div>
                 ))}
-            </div>
+                </div>
             <button
                 onClick={handleViewAbout}
                 className="mt-10 px-6 py-3 bg-white text-[#106EBE] font-semibold rounded-full shadow-md hover:bg-gray-200 transition transform hover:scale-105"
