@@ -12,13 +12,13 @@ const LogoMarquee = ({ skills }) => {
         <Marquee
           speed={40}
           gradient={false}
-          pauseOnHover
+          
           className="py-6"
         >
           {repeatedSkills.map((item, idx) => (
             <div
               key={idx}
-              className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-2 mx-3 text-sm text-gray-200 whitespace-nowrap shadow"
+              className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-2 mx-2 text-sm text-gray-200 whitespace-nowrap shadow transition-transform duration-300 hover:scale-105"
             >
               <img
                 src={item.icon}
