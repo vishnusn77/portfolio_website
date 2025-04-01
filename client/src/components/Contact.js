@@ -43,84 +43,83 @@ const Contact = () => {
     };
 
     return (
-        <section id="contact-section" className="min-h-screen flex flex-col items-center justify-center py-16 px-4 text-gray-900">
-           <div 
-                className="w-full max-w-lg rounded-lg shadow-lg p-8" 
-                style={{
-                    backgroundColor: '#106EBE', 
-                    opacity: 0.88, 
-                }}
-            >
-                <h2 className="text-white text-4xl font-bold text-center mb-2">Contact Me</h2>
-                <br />
+        <section id="contact-section" className="min-h-screen w-full flex flex-col items-center justify-center py-20 px-4 text-white">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-12">Let's Connect</h2>
 
-                <form onSubmit={handleSubmit} className="space-y-4">
-                    <div className="flex space-x-4">
-                        <div className="flex-1">
-                            <label className="block text-sm text-white text-left">First Name</label>
+            <div className="w-full max-w-2xl bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 shadow-lg">
+                <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="flex flex-col md:flex-row gap-4">
+                        <div className="w-full">
+                            <label className="block text-sm mb-1">First Name</label>
                             <input
                                 type="text"
                                 name="firstName"
                                 value={formData.firstName}
                                 onChange={handleChange}
-                                className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 bg-white text-gray-900"
+                                className="w-full bg-black/10 border border-white/20 rounded-md p-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#40ffaa] transition"
                                 placeholder="First Name"
                                 required
                             />
                         </div>
-                        <div className="flex-1">
-                            <label className="block text-sm text-white text-left">Last Name</label>
+                        <div className="w-full">
+                            <label className="block text-sm mb-1">Last Name</label>
                             <input
                                 type="text"
                                 name="lastName"
                                 value={formData.lastName}
                                 onChange={handleChange}
-                                className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 bg-white text-gray-900"
+                                className="w-full bg-black/10 border border-white/20 rounded-md p-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#40ffaa] transition"
                                 placeholder="Last Name"
                                 required
                             />
                         </div>
                     </div>
+
                     <div>
-                        <label className="block text-sm text-white text-left">E-mail</label>
+                        <label className="block text-sm mb-1">E-mail</label>
                         <input
                             type="email"
                             name="email"
                             value={formData.email}
                             onChange={handleChange}
-                            className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 bg-white text-gray-900"
-                            placeholder="example@example.com"
+                            className="w-full bg-black/10 border border-white/20 rounded-md p-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#40ffaa] transition"
+                            placeholder="you@example.com"
                             required
                         />
                     </div>
+
                     <div>
-                        <label className="block text-sm text-white text-left">Message</label>
+                        <label className="block text-sm mb-1">Message</label>
                         <textarea
                             name="message"
                             value={formData.message}
                             onChange={handleChange}
-                            className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 bg-white text-gray-900"
-                            placeholder="Your message"
-                            rows="4"
+                            className="w-full bg-black/10 border border-white/20 rounded-md p-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#40ffaa] transition"
+                            placeholder="What's on your mind?"
+                            rows="5"
                             required
-                        ></textarea>
+                        />
                     </div>
+
                     <div className="text-center">
                         <button
                             type="submit"
-                            className="px-6 py-2 bg-black text-white font-semibold rounded-md hover:bg-gray-800 transition"
+                            className="bg-[#40ffaa] hover:bg-[#2fffb2] text-black font-semibold px-6 py-3 rounded-full transition shadow-md hover:shadow-lg"
                         >
-                            SUBMIT
+                            Send Message
                         </button>
+                        {statusMessage && (
+                            <p className="text-sm mt-4 text-white/80">{statusMessage}</p>
+                        )}
                     </div>
-                    {statusMessage && <p className="text-center text-sm mt-4">{statusMessage}</p>}
                 </form>
             </div>
+
             <button 
                 onClick={scrollToTop} 
-                className="mt-8 px-8 py-4 bg-white text-[#106EBE] font-semibold rounded-full shadow-md hover:bg-gray-200 transition transform hover:scale-105"
+                className="mt-12 px-6 py-3 bg-white text-[#106EBE] font-semibold rounded-full shadow-md hover:bg-gray-200 transition transform hover:scale-105"
             >
-                Go back to top
+                Back to Top
             </button>
         </section>
     );
