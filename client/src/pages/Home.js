@@ -1,5 +1,4 @@
 import React from 'react';
-import { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
 import Projects from '../components/Projects';
 import About from '../components/About'; 
@@ -68,7 +67,7 @@ const Home = () => {
           hoverFillColor='#292929'
         />
       </div>
-      
+
       <Navbar />
 
       <div className="min-h-screen w-full flex flex-col items-center justify-center px-6">
@@ -85,7 +84,7 @@ const Home = () => {
           </GradientText>
 
           <SplitText
-            text="Full-stack developer creating seamless web & mobile experiences — from backend logic to polished UI."
+            text="Building seamless, performant apps across web and mobile, blending clean code with thoughtful design."
             className="text-left text-gray-300 text-lg md:text-[1.25rem] leading-relaxed bg-white/5 backdrop-blur-md p-6 rounded-xl shadow-lg border border-white/10 w-full"
             delay={15}
             animationFrom={{ opacity: 0, transform: 'translateY(20px)' }}
