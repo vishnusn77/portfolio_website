@@ -1,187 +1,77 @@
 import React from 'react';
-import profilePhoto from '../assets/photo.png'; 
-import pythonIcon from '../assets/skills icons/python.png';
-import jsIcon from '../assets/skills icons/js.png';
-import nodejsIcon from '../assets/skills icons/nodejs.png';
-import cssIcon from '../assets/skills icons/css.png';
-import mysqlIcon from '../assets/skills icons/mysql.png';
-import kotlinIcon from '../assets/skills icons/kotlin.png';
-import swiftIcon from '../assets/skills icons/swift.png';
-import htmlIcon from '../assets/skills icons/html.png';
-import cppIcon from '../assets/skills icons/cpp.png';
-import reactIcon from '../assets/skills icons/react.png';
-import angularIcon from '../assets/skills icons/angular.png';
-import dockerIcon from '../assets/skills icons/docker.png';
-import azureIcon from '../assets/skills icons/azure.png';
-import awsIcon from '../assets/skills icons/aws.png';
-import postgresIcon from '../assets/skills icons/postgresql.png';
-import mongoIcon from '../assets/skills icons/mongo.png';
-import linkedinIcon from '../assets/skills icons/linkedin.png';
-import githubIcon from '../assets/skills icons/github.png';
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
+import { FaBriefcase, FaGraduationCap } from 'react-icons/fa';
+
+const workHistory = [
+  {
+    type: 'work',
+    title: 'Software Engineer',
+    location: 'Pivot Systems, India',
+    date: 'Sep 2021 - Apr 2023',
+  },
+  {
+    type: 'work',
+    title: 'Associate Software Engineer',
+    location: 'Pivot Systems, India',
+    date: 'Sep 2020 - Sep 2021',
+  },
+  {
+    type: 'education',
+    title: 'Postgrad Diploma - AI Design & Implementation',
+    location: 'Georgian College, Canada',
+    date: '2023 - 2024',
+  },
+  {
+    type: 'education',
+    title: 'BSc Computer Science',
+    location: 'Kerala University, India',
+    date: '2016 - 2019',
+  },
+];
 
 const About = () => {
-    return (
-        <section
-            id="about-section"
-            className="min-h-screen bg-cover bg-center text-gray-900 w-full flex flex-col items-center py-16 px-4"
-            style={{
-                backgroundImage: `url('https://res.cloudinary.com/dpt3vmgz8/image/upload/v1735259361/background_8_j72isd.jpg')`,
-                backgroundAttachment: 'fixed', 
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                minHeight: '100vh',
-            }}
-        >
-            <div
-                className="flex flex-col md:flex-row items-center rounded-lg shadow-lg p-8 max-w-4xl w-full mb-12"
-                style={{
-                    backgroundColor: 'rgba(16, 110, 190, 0.6)',
-                    borderRadius: '15px',
-                }}
+  return (
+    <section
+      id="about-section"
+      className="min-h-screen w-full flex flex-col items-center justify-center px-4 py-20"
+    >
+      <h2 className="text-4xl md:text-5xl font-bold text-white mb-16">
+        About Me
+      </h2>
+
+      <div className="w-full max-w-5xl">
+        <VerticalTimeline lineColor="#40ffaa">
+          {workHistory.map((item, index) => (
+            <VerticalTimelineElement
+              key={index}
+              className="vertical-timeline-element--work"
+              contentStyle={{
+                background: 'rgba(255, 255, 255, 0.05)',
+                backdropFilter: 'blur(10px)',
+                color: '#fff',
+                border: '1px solid rgba(255,255,255,0.1)',
+              }}
+              contentArrowStyle={{ borderRight: '7px solid #40ffaa' }}
+              date={item.date}
+              iconStyle={{ background: '#40ffaa', color: '#000' }}
+              icon={item.type === 'work' ? <FaBriefcase /> : <FaGraduationCap />}
             >
-                <div className="flex flex-col items-center md:w-1/3 mb-6 md:mb-0">
-                    <img 
-                        src={profilePhoto} 
-                        alt="Vishnu Nair" 
-                        className="rounded-full w-32 h-32 mb-4 object-cover shadow-md"
-                    />
-                    <h3 className="text-3xl font-bold text-gray-900" style={{color: '#ffffff'}}>Vishnu Nair</h3>
-                </div>
-                <div className="md:w-2/3 text-center md:text-left">
-                    <p className="text-lg leading-relaxed text-gray-800" style={{color: '#ffffff'}}>
-                    With a strong foundation in computer science and several years of hands-on experience, I’ve built solutions that connect user needs with technology. My experience spans full-stack development for web and mobile, with a focus on AI insights and cloud integration. I believe in writing clean, efficient code that enhances user experience.
-                    </p>
-                     <div className="flex justify-center md:justify-start mt-6 space-x-4">
-                        <a
-                            href="https://www.linkedin.com/in/vishnu-nair2766/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center px-4 py-2 bg-[#106EBE] text-white font-semibold rounded-lg shadow-md hover:bg-[#0c5090] transition"
-                        >
-                            <img src={linkedinIcon} alt="LinkedIn" className="inline w-5 h-5 mr-2" />Linkedin
-                        </a>
-                        <a
-                            href="https://github.com/vishnusn77"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center px-4 py-2 bg-[#106EBE] text-white font-semibold rounded-lg shadow-md hover:bg-[#0c5090] transition"
-                        >
-                            <img src={githubIcon} alt="GitHub" className="inline w-5 h-5 mr-2" />Github
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <h3 className="text-2xl font-semibold text-white mb-8">My skills</h3>
-            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8 gap-6 max-w-6xl w-full px-4">
-                <div className="flex flex-col items-center text-white">
-                    <div className="flex items-center justify-center w-16 h-16 bg-white bg-opacity-60 rounded-full mb-2">
-                        <img src={pythonIcon} alt="Python" className="w-8 h-8" />
-                    </div>
-                    <p className="text-sm">Python</p>
-                </div>
-                <div className="flex flex-col items-center text-white">
-                    <div className="flex items-center justify-center w-16 h-16 bg-white bg-opacity-60 rounded-full mb-2">
-                        <img src={jsIcon} alt="JavaScript" className="w-8 h-8" />
-                    </div>
-                    <p className="text-sm">JavaScript</p>
-                </div>
-                <div className="flex flex-col items-center text-white">
-                    <div className="flex items-center justify-center w-16 h-16 bg-white bg-opacity-60 rounded-full mb-2">
-                        <img src={nodejsIcon} alt="Nodejs" className="w-8 h-8" />
-                    </div>
-                    <p className="text-sm">Nodejs</p>
-                </div>
-                
-                <div className="flex flex-col items-center text-white">
-                    <div className="flex items-center justify-center w-16 h-16 bg-white bg-opacity-60 rounded-full mb-2">
-                        <img src={cssIcon} alt="CSS" className="w-8 h-8" />
-                    </div>
-                    <p className="text-sm">CSS</p>
-                </div>
-                <div className="flex flex-col items-center text-white">
-                    <div className="flex items-center justify-center w-16 h-16 bg-white bg-opacity-60 rounded-full mb-2">
-                        <img src={mysqlIcon} alt="SQL" className="w-8 h-8" />
-                    </div>
-                    <p className="text-sm">mySQL</p>
-                </div>
-                <div className="flex flex-col items-center text-white">
-                    <div className="flex items-center justify-center w-16 h-16 bg-white bg-opacity-60 rounded-full mb-2">
-                        <img src={kotlinIcon} alt="Kotlin" className="w-8 h-8" />
-                    </div>
-                    <p className="text-sm">Kotlin</p>
-                </div>
-                <div className="flex flex-col items-center text-white">
-                    <div className="flex items-center justify-center w-16 h-16 bg-white bg-opacity-60 rounded-full mb-2">
-                        <img src={swiftIcon} alt="Swift" className="w-8 h-8" />
-                    </div>
-                    <p className="text-sm">Swift</p>
-                </div>
-                <div className="flex flex-col items-center text-white">
-                    <div className="flex items-center justify-center w-16 h-16 bg-white bg-opacity-60 rounded-full mb-2">
-                        <img src={htmlIcon} alt="HTML/CSS" className="w-8 h-8" />
-                    </div>
-                    <p className="text-sm">HTML</p>
-                </div>
-                <div className="flex flex-col items-center text-white">
-                    <div className="flex items-center justify-center w-16 h-16 bg-white bg-opacity-60 rounded-full mb-2">
-                        <img src={cppIcon} alt="C++" className="w-8 h-8" />
-                    </div>
-                    <p className="text-sm">C++</p>
-                </div>
-                <div className="flex flex-col items-center text-white">
-                    <div className="flex items-center justify-center w-16 h-16 bg-white bg-opacity-60 rounded-full mb-2">
-                        <img src={reactIcon} alt="React" className="w-8 h-8" />
-                    </div>
-                    <p className="text-sm">React</p>
-                </div>
-                <div className="flex flex-col items-center text-white">
-                    <div className="flex items-center justify-center w-16 h-16 bg-white bg-opacity-60 rounded-full mb-2">
-                        <img src={angularIcon} alt="Angular" className="w-8 h-8" />
-                    </div>
-                    <p className="text-sm">Angular</p>
-                </div>
-                <div className="flex flex-col items-center text-white">
-                    <div className="flex items-center justify-center w-16 h-16 bg-white bg-opacity-60 rounded-full mb-2">
-                        <img src={dockerIcon} alt="Docker" className="w-8 h-8" />
-                    </div>
-                    <p className="text-sm">Docker</p>
-                </div>
-                <div className="flex flex-col items-center text-white">
-                    <div className="flex items-center justify-center w-16 h-16 bg-white bg-opacity-60 rounded-full mb-2">
-                        <img src={azureIcon} alt="Microsoft Azure" className="w-8 h-8" />
-                    </div>
-                    <p className="text-sm">Microsoft Azure</p>
-                </div>
-                <div className="flex flex-col items-center text-white">
-                    <div className="flex items-center justify-center w-16 h-16 bg-white bg-opacity-60 rounded-full mb-2">
-                        <img src={awsIcon} alt="AWS" className="w-8 h-8" />
-                    </div>
-                    <p className="text-sm">AWS</p>
-                </div>
-                <div className="flex flex-col items-center text-white">
-                    <div className="flex items-center justify-center w-16 h-16 bg-white bg-opacity-60 rounded-full mb-2">
-                        <img src={postgresIcon} alt="PostgreSQL" className="w-8 h-8" />
-                    </div>
-                    <p className="text-sm">PostgreSQL</p>
-                </div>
-                <div className="flex flex-col items-center text-white">
-                    <div className="flex items-center justify-center w-16 h-16 bg-white bg-opacity-60 rounded-full mb-2">
-                        <img src={mongoIcon} alt="MongoDB" className="w-8 h-8" />
-                    </div>
-                    <p className="text-sm">MongoDB</p>
-                </div>
-            </div>
-            <div className="mt-12">
-                <button 
-                    onClick={() => document.getElementById('contact-section').scrollIntoView({ behavior: 'smooth' })}
-                    className="px-8 py-4 bg-white text-[#106EBE] font-semibold rounded-full shadow-md hover:bg-gray-200 transition"
-                >
-                    Contact Me
-                </button>
-            </div>
-        </section>
-    );
+              <h3 className="vertical-timeline-element-title text-white text-lg font-semibold">
+                {item.title}
+              </h3>
+              <h4 className="vertical-timeline-element-subtitle text-[#40ffaa] text-sm font-medium">
+                {item.location}
+              </h4>
+            </VerticalTimelineElement>
+          ))}
+        </VerticalTimeline>
+      </div>
+    </section>
+  );
 };
 
 export default About;
