@@ -59,7 +59,7 @@ const Navbar = () => {
             <div
                 className={`${
                     isMobileMenuOpen ? 'block' : 'hidden'
-                } sm:flex sm:gap-8 gap-4 absolute sm:relative top-16 sm:top-auto left-0 w-full sm:w-auto bg-[#000000cc] sm:bg-transparent sm:flex-row flex-col items-center`}
+                } sm:flex sm:gap-8 gap-4 absolute sm:relative top-24 sm:top-auto left-0 w-full sm:w-auto bg-[#000000cc] sm:bg-transparent sm:flex-row flex-col items-center`}
             >
                 <button
                     onClick={() => handleScrollToSection('home-section')}
