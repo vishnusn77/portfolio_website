@@ -29,23 +29,7 @@ import awsIcon from '../assets/skills icons/aws.png';
 import postgresIcon from '../assets/skills icons/postgresql.png';
 import mongoIcon from '../assets/skills icons/mongo.png';
 
-const lowResImage =
-  'https://res.cloudinary.com/dpt3vmgz8/image/upload/v1735259359/placeholder_sedr4c.jpg';
-const highResImage =
-  'https://res.cloudinary.com/dpt3vmgz8/image/upload/v1735259361/background_3_qyrtzf.webp';
-
 const Home = () => {
-  const [isLoaded, setIsLoaded] = useState(false); 
-  const [imageLoaded, setImageLoaded] = useState(false); 
-
-  useEffect(() => {
-    const img = new Image();
-    img.src = highResImage;
-    img.onload = () => {
-      setImageLoaded(true); 
-      setIsLoaded(true); 
-    };
-  }, []);
 
   const skills = [
     { icon: pythonIcon, label: 'Python' },
@@ -66,8 +50,13 @@ const Home = () => {
     { icon: mongoIcon, label: 'MongoDB' },
     
   ];
-  
 
+  const socialLinks = [
+    { icon: <FaGithub />, href: 'https://github.com/your-username' },
+    { icon: <FaLinkedin />, href: 'https://linkedin.com/in/your-username' },
+    { icon: <SiGmail />, href: 'mailto:your@email.com' },
+  ];
+  
   return (
     <div className="min-h-screen flex flex-col items-center text-center relative">
       <div className="fixed inset-0 -z-10">
@@ -79,15 +68,11 @@ const Home = () => {
           hoverFillColor='#292929'
         />
       </div>
-      {!isLoaded && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black z-50">
-          <div className="text-white text-lg font-bold animate-pulse">Loading...</div>
-        </div>
-      )}
+      
       <Navbar />
+
       <div className="min-h-screen w-full flex flex-col items-center justify-center px-6">
         <div className="max-w-3xl w-full flex flex-col items-center text-center gap-6 py-16">
-          
           <h2 className="text-gray-400 text-xl">Hi, I'm Vishnu Nair</h2>
 
           <GradientText
@@ -111,34 +96,35 @@ const Home = () => {
           />
 
           <div className="flex gap-4 pt-2">
-            <div className="flex gap-4 pt-2 text-white text-2xl">
-              <a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer" className="hover:text-[#40ffaa] transition">
-                <FaGithub />
+            {socialLinks.map((item, idx) => (
+              <a
+                key={idx}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-12 h-12 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 text-white text-2xl hover:text-[#40ffaa] hover:scale-105 transition-all duration-200 backdrop-blur"
+              >
+                {item.icon}
               </a>
-              <a href="https://linkedin.com/in/your-username" target="_blank" rel="noopener noreferrer" className="hover:text-[#40ffaa] transition">
-                <FaLinkedin />
-              </a>
-              <a href="mailto:your@email.com" className="hover:text-[#40ffaa] transition">
-                <SiGmail />
-              </a>
-            </div>
+            ))}
           </div>
         </div>
+
         <LogoMarquee skills={skills} />
+        </div>
+        <Expertise />
+        <Projects
+          handleViewAbout={() =>
+            document
+              .getElementById('about-section')
+              .scrollIntoView({ behavior: 'smooth', block: 'start' })
+          }
+        />
+        <About />
+        <Contact />
+        <Chatbot />
       </div>
-      <Expertise />
-      <Projects
-        handleViewAbout={() =>
-          document
-            .getElementById('about-section')
-            .scrollIntoView({ behavior: 'smooth', block: 'start' })
-        }
-      />
-      <About />
-      <Contact />
-      <Chatbot />
-    </div>
-  );
+    );
 };
 
 export default Home;
