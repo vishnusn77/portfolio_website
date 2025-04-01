@@ -1,24 +1,19 @@
 import { useEffect, useState, useRef } from "react";
 import { motion, useMotionValue, useTransform } from "framer-motion";
-// replace icons with your own if needed
-import {
-  FiCircle,
-  FiCode,
-  FiFileText,
-  FiLayers,
-  FiLayout,
-} from "react-icons/fi";
 import test1 from '../assets/test1.jpg';
 import test2 from '../assets/test2.jpg';
 import test3 from '../assets/test3.jpg';
+import test4 from '../assets/test4.jpg';
+import test5 from '../assets/test5.jpg';
 
 const DEFAULT_ITEMS = [
     { image: test1 },
     { image: test2 },
     { image: test3 },
-  ]
+    { image: test4 },
+    { image: test5 },
+  ];
   
-
 const DRAG_BUFFER = 0;
 const VELOCITY_THRESHOLD = 500;
 const GAP = 16;
@@ -63,7 +58,7 @@ export default function Carousel({
       const timer = setInterval(() => {
         setCurrentIndex((prev) => {
           if (prev === items.length - 1 && loop) {
-            return prev + 1; // Animate to clone.
+            return prev + 1;
           }
           if (prev === carouselItems.length - 1) {
             return loop ? 0 : prev;

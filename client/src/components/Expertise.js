@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import TiltedCard from '../react-bits-components/TiltedCard';
 import Carousel from '../react-bits-components/Carousel';
 import { IoMdArrowDropup } from "react-icons/io";
 import { IoMdArrowDropdown } from "react-icons/io";
+import Button from './Button';
+
 const expertiseItems = [
   {
     title: 'Web Development',
@@ -32,7 +33,6 @@ const expertiseItems = [
 ];
 
 const ExpertiseItem = ({ title, description, isOpen, onToggle }) => {
-  const [open, setOpen] = useState(false);
 
   return (
     <div
@@ -61,7 +61,7 @@ const ExpertiseItem = ({ title, description, isOpen, onToggle }) => {
 const Expertise = () => {
 
   const [openIndex, setOpenIndex] = useState(null);
-  
+
   return (
     <section
       id="expertise-section"
@@ -86,17 +86,24 @@ const Expertise = () => {
         <div className="md:w-1/2 flex flex-col justify-center items-center">
           <div className="flex justify-center items-center h-full" style={{ height: '500px', position: 'relative', width: '100%' }}>
             <Carousel
-              baseWidth={600}
+              baseWidth={500}
               autoplay={true}
-              autoplayDelay={2800}
+              autoplayDelay={3000}
               pauseOnHover={true}
               loop={true}
               round={false}
             />
           </div>
         </div>
-
       </div>
+      <Button
+          className="animate-bounce-down"
+          onClick={() =>
+            document.getElementById('projects-section')?.scrollIntoView({ behavior: 'smooth' })
+          }
+        >
+          See my projects
+      </Button>
     </section>
   );
 };
