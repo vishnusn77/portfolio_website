@@ -9,6 +9,7 @@ import Squares from '../react-bits-components/Squares';
 import GradientText from '../react-bits-components/GradientText';
 import SplitText from '../react-bits-components/SplitText';
 import LogoMarquee from '../react-bits-components/LogoMarquee';
+import Button from '../components/Button';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { SiGmail } from "react-icons/si";
 import pythonIcon from '../assets/skills icons/python.png';
@@ -114,7 +115,18 @@ const Home = () => {
           </div>
         </div>
 
-        <LogoMarquee skills={skills} />
+        <div className="relative w-full flex justify-center items-center">
+          <LogoMarquee skills={skills} />
+            <Button
+              className="absolute mt-[13rem] animate-bounce-down"
+              onClick={() =>
+                document.getElementById('expertise-section')?.scrollIntoView({ behavior: 'smooth' })
+              }
+            >
+              Know more about me
+            </Button>
+        </div>
+
         </div>
         <Expertise />
         <Projects
