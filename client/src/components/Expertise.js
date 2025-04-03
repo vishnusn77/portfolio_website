@@ -1,46 +1,57 @@
 import React, { useState } from 'react';
 import Carousel from '../react-bits-components/Carousel';
-import { IoMdArrowDropup } from "react-icons/io";
-import { IoMdArrowDropdown } from "react-icons/io";
+import { IoMdArrowDropup, IoMdArrowDropdown, IoMdCloudUpload } from "react-icons/io";
 import Button from './Button';
+import { CgWebsite } from "react-icons/cg";
+import { FaMobileAlt, FaServer } from "react-icons/fa";
+import { MdOutlineDesignServices } from "react-icons/md";
+import { BiSolidServer } from "react-icons/bi";
 
 const expertiseItems = [
   {
+    icon: <CgWebsite className="text-[#61DAFB] mr-2" />,
     title: 'Web Development',
     description:
       `• Develop web apps using modern tech stacks\n• Focus on clean architecture and performance optimization`,
   },
   {
+    icon: <FaMobileAlt className="text-[#61DAFB] mr-2" />,
     title: 'Mobile Development',
     description:
       `• Build cross-platform apps with React Native\n• Ensure smooth performance on iOS and Android`,
   },
   {
+    icon: <MdOutlineDesignServices className="text-[#61DAFB] mr-2" />,
     title: 'Responsive UI Design',
     description:
     `• Design flexible interfaces with Tailwind CSS\n• Optimize layouts for all screen sizes`,
   },
   {
+    icon: <BiSolidServer className="text-[#61DAFB] mr-2" />,
     title: 'RESTful API Development',
     description:
       `• Build scalable APIs with Node.js and Express\n• Ensure secure data handling and integration`,
   },
   {
+    icon: <IoMdCloudUpload className="text-[#61DAFB] mr-2" />,
     title: 'Cloud Deployment',
     description:
       `• Deploy dockerized apps on AWS/Azure\n• Automate builds and releases with CI/CD`,
   },
 ];
 
-const ExpertiseItem = ({ title, description, isOpen, onToggle }) => {
+const ExpertiseItem = ({ icon, title, description, isOpen, onToggle }) => {
 
   return (
     <div
       onClick={onToggle}
-      className="cursor-pointer transition-all duration-300 bg-white/5 border border-white/10 backdrop-blur-md rounded-2xl px-5 py-4 mb-3 hover:bg-white/10 group"
+      className="w-full max-w-md cursor-pointer transition-all duration-300 bg-white/5 border border-white/10 backdrop-blur-md rounded-2xl px-5 py-4 mb-3 hover:bg-white/10 group"
     >
       <div className="flex justify-between items-center text-white text-base font-semibold tracking-wide">
-        {title}
+      <div className="flex items-center gap-2">
+        {icon}
+        <span>{title}</span>
+      </div>
         <span className="text-lg text-[#40ffaa] group-hover:scale-125 transition-transform duration-200">
           {isOpen ? <IoMdArrowDropup/> : <IoMdArrowDropdown/>}
         </span>
@@ -75,6 +86,7 @@ const Expertise = () => {
           {expertiseItems.map((item, index) => (
             <ExpertiseItem 
               key={index} 
+              icon={item.icon}
               title={item.title} 
               description={item.description} 
               isOpen={openIndex === index}
@@ -86,7 +98,7 @@ const Expertise = () => {
         <div className="md:w-1/2 flex flex-col justify-center items-center">
           <div className="flex justify-center items-center h-full" style={{ height: '500px', position: 'relative', width: '100%' }}>
             <Carousel
-              baseWidth={500}
+              baseWidth={490}
               autoplay={true}
               autoplayDelay={3000}
               pauseOnHover={true}
