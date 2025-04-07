@@ -27,7 +27,9 @@ const Squares = ({
     };
 
     const resizeObserver = new ResizeObserver(() => {
+      requestAnimationFrame(() => {
         resizeCanvas();
+      });
       });
     resizeObserver.observe(canvas);      
 

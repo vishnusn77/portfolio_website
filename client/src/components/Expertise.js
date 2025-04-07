@@ -3,7 +3,7 @@ import Carousel from '../react-bits-components/Carousel';
 import { IoMdArrowDropup, IoMdArrowDropdown, IoMdCloudUpload } from "react-icons/io";
 import Button from './Button';
 import { CgWebsite } from "react-icons/cg";
-import { FaMobileAlt, FaServer } from "react-icons/fa";
+import { FaMobileAlt } from "react-icons/fa";
 import { MdOutlineDesignServices } from "react-icons/md";
 import { BiSolidServer } from "react-icons/bi";
 
