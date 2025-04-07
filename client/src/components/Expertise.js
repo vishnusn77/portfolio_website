@@ -82,7 +82,7 @@ const Expertise = () => {
         What I Focus On
       </h2>
       <div className="max-w-5xl w-full flex flex-col md:flex-row gap-10">
-        <div className="md:w-1/2 flex flex-col justify-center">
+      <div className="md:w-1/2 w-full flex flex-col items-center md:items-start justify-center">
           {expertiseItems.map((item, index) => (
             <ExpertiseItem 
               key={index} 
