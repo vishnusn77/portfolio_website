@@ -116,6 +116,10 @@ const Projects = ({ handleViewAbout }) => {
         setSelectedProject(null);
     };
 
+    const optimizeCloudinary = (url) => {
+        return url.replace('/upload/', '/upload/q_auto,f_auto,w_576,h_300,c_fill/');
+      };      
+
     return (
         <section
             id="projects-section"
@@ -126,11 +130,11 @@ const Projects = ({ handleViewAbout }) => {
                 {projects.map((project, index) => (
                 <div
                     key={index}
-                    className="w-72 h-[250px] bg-white/5 border border-white/10 backdrop-blur-md rounded-xl overflow-hidden shadow-md hover:bg-white/10 transition-all duration-300 text-left flex flex-col"
+                    className="group w-72 h-[250px] bg-white/5 border border-white/10 backdrop-blur-md rounded-xl overflow-hidden shadow-md hover:bg-white/10 transition-all duration-300 text-left flex flex-col"
                 >
-                    <div className="relative overflow-hidden group w-full h-40 sm:h-44">
+                    <div className="relative overflow-hidden w-full h-40 sm:h-44">
                     <img
-                        src={project.images[0]}
+                        src={optimizeCloudinary(project.images[0])}
                         alt={project.title}
                         className="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
                     />
@@ -142,13 +146,13 @@ const Projects = ({ handleViewAbout }) => {
                         <div className="flex gap-2">
                             <button
                             onClick={() => openModal(project)}
-                            className="px-3 py-1 text-sm rounded-md font-medium text-black bg-[#40ffaa] hover:bg-[#32e6a8] transition"
+                            className="px-3 py-1.5 text-sm bg-[#262626] text-white border border-white/10 rounded-md hover:bg-[#333] transition"
                             >
                             View details
                             </button>
                             <button
                             onClick={() => window.open(project.link, '_blank', 'noopener,noreferrer')}
-                            className="px-3 py-1 text-sm rounded-md font-medium text-[#40ffaa] bg-white hover:bg-gray-200 transition"
+                            className="px-3 py-1.5 text-sm bg-transparent text-[#40ffaa] border border-[#40ffaa] rounded-md hover:bg-[#40ffaa]/10 transition"
                             >
                             Try it out
                             </button>
