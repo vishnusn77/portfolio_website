@@ -25,7 +25,7 @@ const Projects = ({ handleViewAbout }) => {
             details: 'Price Patrol is a web-based application that empowers users to monitor product prices on Amazon and receive email notifications when prices drop to their desired thresholds. Built using Django for backend functionality and MongoDB for data storage, the application integrates the Canopy API to fetch product data efficiently. Users can add products via a simple form, and the app ensures a robust API usage limit of 100 requests per month using an incremental counter. The system uses cron jobs for periodic price checks and email alerts. Deployed on Render, the app also supports responsive email notifications using Python email libraries. Key features include user authentication, API usage tracking, and seamless management of product price history, making it a scalable solution for e-commerce price monitoring.',
             technologies: ['Python', 'Django', 'MongoDB', 'Canopy API'],
             images: [
-                'https://res.cloudinary.com/dpt3vmgz8/image/upload/v1735260582/1_goivcs.png',
+                'https://res.cloudinary.com/dpt3vmgz8/image/upload/v1744076453/Screenshot_2025-04-07_214028_mtilxl.png',
                 'https://res.cloudinary.com/dpt3vmgz8/image/upload/v1735260582/2_htqoau.png',
                 'https://res.cloudinary.com/dpt3vmgz8/image/upload/v1735260583/3_nt0jxw.png'
             ],
@@ -37,6 +37,7 @@ const Projects = ({ handleViewAbout }) => {
             details: 'Dream Journal is a personalized mobile application designed to help users securely log, organize, and reflect on their dreams with ease. The app ensures seamless access to dream entries through real-time cloud synchronization powered by Firebase, while offline functionality is supported by Room, providing reliable local storage. Users can categorize their dreams, add tags, and utilize a powerful search feature to quickly revisit specific entries, making it easy to uncover patterns and gain insights into their subconscious. Built with Kotlin and the Android SDK, the app combines robust performance, efficient data management, and an intuitive interface to deliver a smooth and dependable user experience.',
             technologies: ['Kotlin', 'Android SDK', 'XML', 'Room', 'Firebase'],
             images: [
+                'https://res.cloudinary.com/dpt3vmgz8/image/upload/v1744078522/Untitled-1_ew863u.jpg',
                 'https://res.cloudinary.com/dpt3vmgz8/image/upload/v1735260529/4_ws6pe1.png',
                 'https://res.cloudinary.com/dpt3vmgz8/image/upload/v1735260530/5_mnrn7l.png'
             ],
@@ -48,7 +49,7 @@ const Projects = ({ handleViewAbout }) => {
             details: 'ImageGenAI is a web application designed to transform user-provided text prompts into stunning AI-generated images using OpenAI DALL·E API. Built with Python and Flask, the app serves as the backend to manage API requests and deliver results efficiently. The frontend, developed using HTML, CSS, and JavaScript, features a responsive and intuitive interface where users can enter prompts, view generated images, and download them directly. Hosted on AWS EC2, the app ensures scalability and reliability, with Nginx configured as a reverse proxy to handle incoming traffic. This seamless integration of tools and technologies makes ImageGenAI a reliable platform for users to bring their creative ideas to life.',
             technologies: ['Flask', 'Dall-E API', 'AWS EC2', 'HTML/CSS'],
             images: [
-                'https://res.cloudinary.com/dpt3vmgz8/image/upload/v1735260562/1_t0cthi.png',
+                'https://res.cloudinary.com/dpt3vmgz8/image/upload/v1744079039/Screenshot_2025-04-07_222342_xqd9fa.png',
                 'https://res.cloudinary.com/dpt3vmgz8/image/upload/v1735260562/2_mpv26n.png',
                 'https://res.cloudinary.com/dpt3vmgz8/image/upload/v1735260563/3_a13ihd.png'
             ],
@@ -67,12 +68,24 @@ const Projects = ({ handleViewAbout }) => {
             link: 'https://weather-now-24x7.netlify.app/'
         },
         {
-            title: 'HyperType',
-            description: 'An interactive typing game designed to boost your type speed and accuracy, with score tracking and round progression.',
-            details: 'HyperType is an interactive web-based typing speed game designed to improve typing accuracy and speed through engaging challenges. Built using HTML5, it provides a well-structured, semantic interface, while CSS3 ensures a responsive and visually appealing design, including dark and light mode themes for user comfort. The core functionality is powered by JavaScript, which handles real-time score tracking for Words Per Minute (WPM) and accuracy, sentence randomization, and visual feedback on typing progress. The game spans multiple rounds, each featuring unique, non-repeating sentences, with cheat prevention mechanisms like disabled copy-paste functionality. Dynamic updates keep the player informed of their progress, and a leaderboard tracks high scores for motivation. Hosted on GitHub Pages, HyperType delivers a seamless and accessible experience across devices.',
-            technologies: ['JavaScript', 'HTML5', 'CSS3'],
+            title: 'Checkmate',
+            description: 'A habit & task tracking app with streaks and progress visualization to stay productive daily.',
+            details: 'Checkmate is a minimalist productivity tracker that helps users build consistent habits and manage daily tasks. Featuring a calendar-based streak system, motivational progress bars, and custom reminders, the app ensures users stay on track with personal goals. Built with React Native and Firebase, it supports real-time sync, offline mode, and engaging dark/light themes. The intuitive UI encourages long-term engagement, making productivity feel effortless.',
+            technologies: ['React Native', 'Firebase', 'Expo', 'JavaScript'],
             images: [
-                'https://res.cloudinary.com/dpt3vmgz8/image/upload/v1735260549/1_dgwech.png',
+                'https://res.cloudinary.com/dpt3vmgz8/image/upload/v1744079436/Screenshot_2025-04-07_223017_vaqlw4.png',
+                'https://res.cloudinary.com/dpt3vmgz8/image/upload/v1735260549/2_vbxzrr.png',
+                'https://res.cloudinary.com/dpt3vmgz8/image/upload/v1735260549/3_iuzs0s.png'
+            ],
+            link: 'https://vishnusn77.github.io/Hyper-type/'
+        },
+        {
+            title: 'Sentiment Analysis',
+            description: 'ML model that classifies text reviews as positive or negative using NLP and vectorization.',
+            details: 'Sentiment Analysis is a machine learning pipeline built to analyze and classify user reviews into positive or negative sentiments. It uses TF-IDF for feature extraction and compares models including Logistic Regression, Random Forest, and XGBoost for optimal performance. The dataset includes 25K labeled IMDB reviews. Evaluation metrics such as accuracy, precision, and confusion matrix are used to validate model effectiveness.',
+            technologies: ['Python', 'Scikit-learn', 'XGBoost', 'NLP', 'TF-IDF'],
+            images: [
+                'https://res.cloudinary.com/dpt3vmgz8/image/upload/v1744079784/Screenshot_2025-04-07_223600_n76ufg.png',
                 'https://res.cloudinary.com/dpt3vmgz8/image/upload/v1735260549/2_vbxzrr.png',
                 'https://res.cloudinary.com/dpt3vmgz8/image/upload/v1735260549/3_iuzs0s.png'
             ],
@@ -84,19 +97,7 @@ const Projects = ({ handleViewAbout }) => {
             details: 'HyperType is an interactive web-based typing speed game designed to improve typing accuracy and speed through engaging challenges. Built using HTML5, it provides a well-structured, semantic interface, while CSS3 ensures a responsive and visually appealing design, including dark and light mode themes for user comfort. The core functionality is powered by JavaScript, which handles real-time score tracking for Words Per Minute (WPM) and accuracy, sentence randomization, and visual feedback on typing progress. The game spans multiple rounds, each featuring unique, non-repeating sentences, with cheat prevention mechanisms like disabled copy-paste functionality. Dynamic updates keep the player informed of their progress, and a leaderboard tracks high scores for motivation. Hosted on GitHub Pages, HyperType delivers a seamless and accessible experience across devices.',
             technologies: ['JavaScript', 'HTML5', 'CSS3'],
             images: [
-                'https://res.cloudinary.com/dpt3vmgz8/image/upload/v1735260549/1_dgwech.png',
-                'https://res.cloudinary.com/dpt3vmgz8/image/upload/v1735260549/2_vbxzrr.png',
-                'https://res.cloudinary.com/dpt3vmgz8/image/upload/v1735260549/3_iuzs0s.png'
-            ],
-            link: 'https://vishnusn77.github.io/Hyper-type/'
-        },
-        {
-            title: 'HyperType',
-            description: 'An interactive typing game designed to boost your type speed and accuracy, with score tracking and round progression.',
-            details: 'HyperType is an interactive web-based typing speed game designed to improve typing accuracy and speed through engaging challenges. Built using HTML5, it provides a well-structured, semantic interface, while CSS3 ensures a responsive and visually appealing design, including dark and light mode themes for user comfort. The core functionality is powered by JavaScript, which handles real-time score tracking for Words Per Minute (WPM) and accuracy, sentence randomization, and visual feedback on typing progress. The game spans multiple rounds, each featuring unique, non-repeating sentences, with cheat prevention mechanisms like disabled copy-paste functionality. Dynamic updates keep the player informed of their progress, and a leaderboard tracks high scores for motivation. Hosted on GitHub Pages, HyperType delivers a seamless and accessible experience across devices.',
-            technologies: ['JavaScript', 'HTML5', 'CSS3'],
-            images: [
-                'https://res.cloudinary.com/dpt3vmgz8/image/upload/v1735260549/1_dgwech.png',
+                'https://res.cloudinary.com/dpt3vmgz8/image/upload/v1744079276/Screenshot_2025-04-07_222733_o9apwj.png',
                 'https://res.cloudinary.com/dpt3vmgz8/image/upload/v1735260549/2_vbxzrr.png',
                 'https://res.cloudinary.com/dpt3vmgz8/image/upload/v1735260549/3_iuzs0s.png'
             ],
