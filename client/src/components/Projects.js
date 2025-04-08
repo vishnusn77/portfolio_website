@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ProjectModal from './ProjectModal';
+import Button from './Button';
 
 const Projects = ({ handleViewAbout }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -76,6 +77,30 @@ const Projects = ({ handleViewAbout }) => {
                 'https://res.cloudinary.com/dpt3vmgz8/image/upload/v1735260549/3_iuzs0s.png'
             ],
             link: 'https://vishnusn77.github.io/Hyper-type/'
+        },
+        {
+            title: 'HyperType',
+            description: 'An interactive typing game designed to boost your type speed and accuracy, with score tracking and round progression.',
+            details: 'HyperType is an interactive web-based typing speed game designed to improve typing accuracy and speed through engaging challenges. Built using HTML5, it provides a well-structured, semantic interface, while CSS3 ensures a responsive and visually appealing design, including dark and light mode themes for user comfort. The core functionality is powered by JavaScript, which handles real-time score tracking for Words Per Minute (WPM) and accuracy, sentence randomization, and visual feedback on typing progress. The game spans multiple rounds, each featuring unique, non-repeating sentences, with cheat prevention mechanisms like disabled copy-paste functionality. Dynamic updates keep the player informed of their progress, and a leaderboard tracks high scores for motivation. Hosted on GitHub Pages, HyperType delivers a seamless and accessible experience across devices.',
+            technologies: ['JavaScript', 'HTML5', 'CSS3'],
+            images: [
+                'https://res.cloudinary.com/dpt3vmgz8/image/upload/v1735260549/1_dgwech.png',
+                'https://res.cloudinary.com/dpt3vmgz8/image/upload/v1735260549/2_vbxzrr.png',
+                'https://res.cloudinary.com/dpt3vmgz8/image/upload/v1735260549/3_iuzs0s.png'
+            ],
+            link: 'https://vishnusn77.github.io/Hyper-type/'
+        },
+        {
+            title: 'HyperType',
+            description: 'An interactive typing game designed to boost your type speed and accuracy, with score tracking and round progression.',
+            details: 'HyperType is an interactive web-based typing speed game designed to improve typing accuracy and speed through engaging challenges. Built using HTML5, it provides a well-structured, semantic interface, while CSS3 ensures a responsive and visually appealing design, including dark and light mode themes for user comfort. The core functionality is powered by JavaScript, which handles real-time score tracking for Words Per Minute (WPM) and accuracy, sentence randomization, and visual feedback on typing progress. The game spans multiple rounds, each featuring unique, non-repeating sentences, with cheat prevention mechanisms like disabled copy-paste functionality. Dynamic updates keep the player informed of their progress, and a leaderboard tracks high scores for motivation. Hosted on GitHub Pages, HyperType delivers a seamless and accessible experience across devices.',
+            technologies: ['JavaScript', 'HTML5', 'CSS3'],
+            images: [
+                'https://res.cloudinary.com/dpt3vmgz8/image/upload/v1735260549/1_dgwech.png',
+                'https://res.cloudinary.com/dpt3vmgz8/image/upload/v1735260549/2_vbxzrr.png',
+                'https://res.cloudinary.com/dpt3vmgz8/image/upload/v1735260549/3_iuzs0s.png'
+            ],
+            link: 'https://vishnusn77.github.io/Hyper-type/'
         }
        
     ];
@@ -93,50 +118,53 @@ const Projects = ({ handleViewAbout }) => {
     return (
         <section
             id="projects-section"
-            className="min-h-screen pt-16 pb-16 text-white w-full flex flex-col items-center"
+            className="min-h-screen w-full px-4 py-20 flex flex-col items-center justify-center"
         >
             <h2 className="text-4xl font-bold mb-8">My Projects</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl px-6">
+            <div className="flex flex-wrap justify-center gap-6 max-w-7xl px-4">
                 {projects.map((project, index) => (
                 <div
                     key={index}
-                    className="group bg-white/5 border border-white/10 backdrop-blur-md rounded-2xl overflow-hidden shadow-lg hover:bg-white/10 transition-all duration-300"
-                >                  
-                   <div className="overflow-hidden">
-                        <img
-                            src={project.images[0]}
-                            alt={project.title}
-                            className="w-full h-48 object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
-                        />
+                    className="w-72 h-[250px] bg-white/5 border border-white/10 backdrop-blur-md rounded-xl overflow-hidden shadow-md hover:bg-white/10 transition-all duration-300 text-left flex flex-col"
+                >
+                    <div className="relative overflow-hidden group w-full h-40 sm:h-44">
+                    <img
+                        src={project.images[0]}
+                        alt={project.title}
+                        className="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
+                    />
                     </div>
-                    <div className="p-4 flex flex-col items-start justify-between h-full">
-                        <h3 className="text-xl font-semibold text-white mb-2">{project.title}</h3>
-                        <div className="mt-auto flex gap-2">
-                        <button
+                    <div className="p-3 sm:p-4">
+                        <h3 className="text-base sm:text-lg font-semibold text-white mb-3">
+                            {project.title}
+                        </h3>
+                        <div className="flex gap-2">
+                            <button
                             onClick={() => openModal(project)}
-                            className="px-4 py-2 bg-[#40ffaa] text-black font-semibold rounded-lg hover:bg-[#32e6a8] transition"
-                        >
-                            View
-                        </button>
-                        <button
-                            onClick={() =>
-                            window.open(project.link, '_blank', 'noopener,noreferrer')
-                            }
-                            className="px-4 py-2 bg-white text-[#40ffaa] font-semibold rounded-lg hover:bg-gray-200 transition"
-                        >
-                            Try
-                        </button>
+                            className="px-3 py-1 text-sm rounded-md font-medium text-black bg-[#40ffaa] hover:bg-[#32e6a8] transition"
+                            >
+                            View details
+                            </button>
+                            <button
+                            onClick={() => window.open(project.link, '_blank', 'noopener,noreferrer')}
+                            className="px-3 py-1 text-sm rounded-md font-medium text-[#40ffaa] bg-white hover:bg-gray-200 transition"
+                            >
+                            Try it out
+                            </button>
                         </div>
                     </div>
-                </div>
+                </div>              
                 ))}
                 </div>
-            <button
-                onClick={handleViewAbout}
-                className="mt-10 px-6 py-3 bg-white text-[#106EBE] font-semibold rounded-full shadow-md hover:bg-gray-200 transition transform hover:scale-105"
-            >
-                More About Me
-            </button>
+                <div className="mt-10">
+                <Button
+                    className="animate-bounce-down"
+                    onClick={() =>
+                        document.getElementById('about-section')?.scrollIntoView({ behavior: 'smooth' })
+                    }
+                    >
+                    View my journey
+                </Button></div>
             {isModalOpen && selectedProject && (
                 <ProjectModal project={selectedProject} isOpen={isModalOpen} onClose={closeModal} />
             )}
