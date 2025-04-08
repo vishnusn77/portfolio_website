@@ -55,24 +55,25 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
         onClick={handleBackgroundClick}
       >
         <div
-          className={`w-full max-w-2xl mx-4 p-6 relative overflow-y-auto border border-white/10 backdrop-blur-md rounded-xl bg-white/5 text-white shadow-xl transform transition-all duration-300 ${
+          className={`w-full max-w-2xl sm:mx-4 mx-2 p-4 sm:p-6 relative overflow-y-auto border border-white/10 backdrop-blur-md rounded-xl bg-white/5 text-white shadow-xl transform transition-all duration-300 ${
             animate ? 'scale-100 opacity-100' : 'scale-95 opacity-0'
           }`}
           style={{ maxHeight: '85vh' }}
           onClick={(e) => e.stopPropagation()}
         >
-        <button
+          {/* Close Button */}
+          <button
             onClick={onClose}
-            className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/10 backdrop-blur border border-white/10 text-white hover:bg-white/20 transition-all duration-200 flex items-center justify-center text-base font-bold"
-            >
+            className="absolute top-3 right-3 w-8 h-8 rounded-md bg-white/10 backdrop-blur border border-white/10 text-white hover:bg-white/20 transition-all duration-200 flex items-center justify-center text-base font-bold"
+          >
             &times;
-        </button>
+          </button>
 
-          <h2 className="text-2xl font-bold mb-5">{project.title}</h2>
+          <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-5">{project.title}</h2>
 
-          <div className="flex space-x-4 overflow-x-auto mb-5">
+          <div className="flex gap-4 overflow-x-auto mb-5 pb-1 -mx-1 px-1">
             {project.images.map((img, index) => (
-              <div key={index} className="relative w-64 h-40 shrink-0">
+              <div key={index} className="relative w-60 h-36 shrink-0">
                 {!loadedImages.includes(index) && (
                   <div className="absolute inset-0 flex items-center justify-center bg-gray-100/20">
                     <div className="w-8 h-8 border-4 border-t-[#40ffaa] border-white/20 rounded-full animate-spin"></div>
@@ -81,7 +82,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                 <img
                   src={img}
                   alt={`${project.title} screenshot ${index + 1}`}
-                  className={`w-64 h-40 rounded-lg object-cover cursor-pointer transition-transform duration-300 hover:scale-105 ${
+                  className={`w-full h-full rounded-lg object-cover cursor-pointer transition-transform duration-300 hover:scale-105 ${
                     loadedImages.includes(index) ? '' : 'opacity-0'
                   }`}
                   onClick={() => openImage(img)}
@@ -91,33 +92,33 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
             ))}
           </div>
 
-          <p className="text-gray-300 text-base text-justify mb-5 whitespace-pre-line">
+          <p className="text-gray-300 text-sm sm:text-base text-justify mb-6 whitespace-pre-line">
             {project.details}
           </p>
 
-          <div className="flex items-center justify-between flex-wrap gap-y-2 mt-6">
-            {/* Technologies list */}
+          <div className="flex items-center justify-between flex-wrap gap-y-3 mt-4">
+            {/* Tech stack */}
             <div className="flex flex-wrap gap-2">
-                {project.technologies.map((tech, idx) => (
+              {project.technologies.map((tech, idx) => (
                 <span
-                    key={idx}
-                    className="px-3 py-1 text-sm rounded-full bg-white/10 text-white border border-white/10 backdrop-blur-md"
+                  key={idx}
+                  className="px-3 py-1 text-xs sm:text-sm rounded-full bg-white/10 text-white border border-white/10 backdrop-blur-md"
                 >
-                    {tech}
+                  {tech}
                 </span>
-                ))}
+              ))}
             </div>
 
-            {/* Visit Website Button */}
+            {/* Button */}
             <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm px-3 py-2 bg-[#40ffaa] text-black font-semibold rounded-md hover:bg-[#32e6a8] transition"
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs sm:text-sm px-3 py-2 bg-[#40ffaa] text-black font-semibold rounded-md hover:bg-[#32e6a8] transition"
             >
-                Visit Website
+              Visit Website
             </a>
-         </div>
+          </div>
         </div>
       </div>
 
@@ -129,7 +130,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
           <div className="relative">
             <button
               onClick={closeImage}
-              className="absolute top-2 right-2 text-white bg-[#003f8c] hover:bg-[#002c66] text-lg font-bold w-8 h-8 rounded-full flex items-center justify-center shadow-md z-50 transition"
+              className="absolute top-2 right-2 text-white bg-[#003f8c] hover:bg-[#002c66] text-lg font-bold w-8 h-8 rounded-md flex items-center justify-center shadow-md z-50 transition"
             >
               &times;
             </button>
