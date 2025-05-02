@@ -11,25 +11,29 @@ const workHistory = [
     type: 'work',
     title: 'Software Engineer',
     location: 'Pivot Systems, India',
-    date: 'Sep 2021 - Apr 2023',
+    date: '2021',
+    iconColor: '#40ffaa',
   },
   {
     type: 'work',
     title: 'Associate Software Engineer',
     location: 'Pivot Systems, India',
-    date: 'Sep 2020 - Sep 2021',
+    date: '2020',
+    iconColor: '#40ffaa',
   },
   {
     type: 'education',
     title: 'Postgrad Diploma - AI Design & Implementation',
     location: 'Georgian College, Canada',
-    date: '2023 - 2024',
+    date: '2023',
+    iconColor: '#40ffaa',
   },
   {
     type: 'education',
     title: 'BSc Computer Science',
     location: 'Kerala University, India',
-    date: '2016 - 2019',
+    date: '2019',
+    iconColor: '#40ffaa',
   },
 ];
 
@@ -37,33 +41,51 @@ const About = () => {
   return (
     <section
       id="about-section"
-      className="min-h-screen w-full flex flex-col items-center justify-center px-4 py-20"
+      className="min-h-screen w-full flex flex-col items-center justify-center px-4 py-20 bg-transparent"
     >
-      <h2 className="text-4xl md:text-5xl font-bold text-white mb-16">
+      <h2 className="text-4xl md:text-5xl font-bold text-white mb-12">
         About Me
       </h2>
 
       <div className="w-full max-w-5xl">
-        <VerticalTimeline lineColor="#40ffaa">
+        <VerticalTimeline lineColor="rgba(255,255,255,0.2)">
           {workHistory.map((item, index) => (
             <VerticalTimelineElement
               key={index}
-              className="vertical-timeline-element--work"
               contentStyle={{
                 background: 'rgba(255, 255, 255, 0.05)',
                 backdropFilter: 'blur(10px)',
-                color: '#fff',
                 border: '1px solid rgba(255,255,255,0.1)',
+                borderTop: `3px solid ${item.iconColor}`,
+                color: '#ffffff',
+                padding: '16px',
               }}
-              contentArrowStyle={{ borderRight: '7px solid #40ffaa' }}
-              date={item.date}
-              iconStyle={{ background: '#40ffaa', color: '#000' }}
-              icon={item.type === 'work' ? <FaBriefcase /> : <FaGraduationCap />}
+              contentArrowStyle={{
+                borderRight: `7px solid ${item.iconColor}`,
+              }}
+              date={<span className="text-xs text-white/80">{item.date}</span>}
+              iconStyle={{
+                background: item.iconColor,
+                color: '#000',
+                fontSize: '12px',
+                width: '36px',
+                height: '36px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+              icon={
+                item.type === 'work' ? (
+                  <FaBriefcase size={12} />
+                ) : (
+                  <FaGraduationCap size={12} />
+                )
+              }
             >
-              <h3 className="vertical-timeline-element-title text-white text-lg font-semibold">
+              <h3 className="text-white text-sm sm:text-base font-semibold mb-1">
                 {item.title}
               </h3>
-              <h4 className="vertical-timeline-element-subtitle text-[#40ffaa] text-sm font-medium">
+              <h4 className="text-[#40ffaa] text-xs font-medium">
                 {item.location}
               </h4>
             </VerticalTimelineElement>
