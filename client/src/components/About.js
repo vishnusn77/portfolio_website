@@ -4,7 +4,8 @@ import {
   VerticalTimelineElement,
 } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-import { FaBriefcase, FaGraduationCap } from 'react-icons/fa';
+import { RiGraduationCapFill } from "react-icons/ri";
+import { BiSolidBriefcase } from "react-icons/bi";
 
 const workHistory = [
   {
@@ -63,24 +64,41 @@ const About = () => {
               contentArrowStyle={{
                 borderRight: `7px solid ${item.iconColor}`,
               }}
-              date={<span className="text-xs text-white/80">{item.date}</span>}
+              date={
+                <span
+                  style={{
+                    position: 'absolute',
+                    top: '10px',
+                    fontSize: '12px',
+                    color: 'rgba(255,255,255,0.8)',
+                    whiteSpace: 'nowrap',
+                    ...(index % 2 === 0
+                      ? { right: 'calc(100% - 30px)' } // left-side date
+                      : { left: 'calc(100% - 30px)' }) // right-side date
+                  }}
+                  className="text-xs text-white/80"
+                >
+                  {item.date}
+                </span>
+              }              
               iconStyle={{
                 background: item.iconColor,
                 color: '#000',
-                fontSize: '12px',
-                width: '36px',
-                height: '36px',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-              }}
+                padding: 0,
+                lineHeight: 0,
+              }}              
               icon={
-                item.type === 'work' ? (
-                  <FaBriefcase size={12} />
-                ) : (
-                  <FaGraduationCap size={12} />
-                )
-              }
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  {item.type === 'work' ? (
+                    <BiSolidBriefcase style={{ display: 'block', transform: 'translateY(5px)' }} />
+                  ) : (
+                    <RiGraduationCapFill style={{ display: 'block', transform: 'translateY(5px)' }} />
+                  )}
+                </div>
+              }              
             >
               <h3 className="text-white text-sm sm:text-base font-semibold mb-1">
                 {item.title}
