@@ -6,6 +6,7 @@ import {
 import 'react-vertical-timeline-component/style.min.css';
 import { RiGraduationCapFill } from "react-icons/ri";
 import { BiSolidBriefcase } from "react-icons/bi";
+import { useEffect, useState } from 'react';
 
 const workHistory = [
   {
@@ -39,6 +40,16 @@ const workHistory = [
 ];
 
 const About = () => {
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const updateSize = () => setIsMobile(window.innerWidth < 1170);
+    updateSize();
+    window.addEventListener('resize', updateSize);
+    return () => window.removeEventListener('resize', updateSize);
+  }, []);
+
   return (
     <section
       id="about-section"
@@ -66,21 +77,19 @@ const About = () => {
               }}
               date={
                 <span
+                  className="text-xs text-white/80 absolute"
                   style={{
-                    position: 'absolute',
-                    top: '10px',
-                    fontSize: '12px',
-                    color: 'rgba(255,255,255,0.8)',
+                    top: isMobile ? '70px' : '10px',
+                    left: isMobile ? '50%' : index % 2 === 0 ? 'auto' : 'calc(100% - 30px)',
+                    right: isMobile ? 'auto' : index % 2 === 0 ? 'calc(100% - 30px)' : 'auto',
+                    transform: isMobile ? 'translateX(-50%)' : 'none',
+                    textAlign: isMobile ? 'center' : 'unset',
                     whiteSpace: 'nowrap',
-                    ...(index % 2 === 0
-                      ? { right: 'calc(100% - 30px)' } // left-side date
-                      : { left: 'calc(100% - 30px)' }) // right-side date
                   }}
-                  className="text-xs text-white/80"
                 >
                   {item.date}
                 </span>
-              }              
+              }
               iconStyle={{
                 background: item.iconColor,
                 color: '#000',
