@@ -1,12 +1,10 @@
 import React from 'react';
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from 'react-vertical-timeline-component';
+import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import { RiGraduationCapFill } from "react-icons/ri";
 import { BiSolidBriefcase } from "react-icons/bi";
 import { useEffect, useState } from 'react';
+import Button from './Button';
 
 const workHistory = [
   {
@@ -126,6 +124,16 @@ const About = () => {
             </VerticalTimelineElement>
           ))}
         </VerticalTimeline>
+      </div>
+      <div className="mt-12">
+       <Button
+          className="animate-bounce-down"
+          onClick={() =>
+              document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' })
+          }
+          >
+          Connect with me
+       </Button>
       </div>
     </section>
   );
