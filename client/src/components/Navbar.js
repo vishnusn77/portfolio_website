@@ -62,11 +62,11 @@ const Navbar = () => {
                 } sm:flex sm:gap-8 gap-4 absolute sm:relative top-24 sm:top-auto left-0 w-full sm:w-auto bg-[#000000cc] sm:bg-transparent sm:flex-row flex-col items-center`}
             >
                 <button
-                    onClick={() => handleScrollToSection('home-section')}
+                    onClick={() => handleScrollToSection('expertise-section')}
                     className="hover:text-[#0FFCBE] transition px-4 sm:px-0 py-2 text-center"
                 >
                     <ShinyText
-                        text="Home"
+                        text="Skills"
                         speed={3}
                         disabled={false}
                         className="text-base"
