@@ -8,8 +8,13 @@ const App = () => {
 
     useEffect(() => {
         const handleLoad = () => setLoading(false);
-        window.addEventListener('load', handleLoad);
-        return () => window.removeEventListener('load', handleLoad);
+
+        if (document.readyState === 'complete') {
+            setLoading(false);
+        } else {
+            window.addEventListener('load', handleLoad);
+            return () => window.removeEventListener('load', handleLoad);
+        }
     }, []);
 
     return (
