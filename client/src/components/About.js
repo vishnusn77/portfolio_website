@@ -10,7 +10,7 @@ const workHistory = [
   {
     type: 'work',
     title: 'Full Stack Developer',
-    location: 'Bluewave Labs - Toronto, Canada',
+    location: 'Bluewave Labs - Toronto, ON',
     date: 'Feb 2025 - Present',
     iconColor: '#40ffaa',
   },
@@ -24,14 +24,14 @@ const workHistory = [
   {
     type: 'work',
     title: 'Software Engineer',
-    location: 'Pivot Systems - Trivandrum, India',
+    location: 'Pivot Systems - San Jose, CA',
     date: 'Sept 2021 - Apr 2023',
     iconColor: '#40ffaa',
   },
   {
     type: 'work',
     title: 'Associate Software Engineer',
-    location: 'Pivot Systems - Trivandrum, India',
+    location: 'Pivot Systems - San Jose, CA',
     date: 'Sept 2020 - Sept 2021',
     iconColor: '#40ffaa',
   },
