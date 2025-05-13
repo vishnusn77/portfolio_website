@@ -9,6 +9,7 @@ import Squares from '../react-bits-components/Squares';
 import GradientText from '../react-bits-components/GradientText';
 import SplitText from '../react-bits-components/SplitText';
 import LogoMarquee from '../react-bits-components/LogoMarquee';
+import ClickSpark from '../react-bits-components/ClickSpark';
 import Button from '../components/Button';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { SiGmail } from "react-icons/si";
@@ -63,6 +64,13 @@ const Home = () => {
   ];
   
   return (
+    <ClickSpark
+      sparkColor='#fff'
+      sparkSize={10}
+      sparkRadius={15}
+      sparkCount={8}
+      duration={400}
+    >
     <div className="min-h-screen flex flex-col items-center text-center relative">
       <div className="fixed inset-0 -z-10">
         <Squares 
@@ -140,6 +148,7 @@ const Home = () => {
         <Contact />
         <Chatbot />
       </div>
+      </ClickSpark>
     );
 };
 
