@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Footer from './Footer';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -123,7 +124,7 @@ const Contact = () => {
       >
         Return to Top
       </button>
-
+      <Footer />      
     </section>
   );
 };

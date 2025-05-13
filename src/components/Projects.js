@@ -164,7 +164,7 @@ const Projects = ({ handleViewAbout }) => {
                             <h3 className="text-base sm:text-lg font-semibold text-white">
                                 {project.title}
                             </h3>
-                            <span className="text-xs px-3 py-1 rounded-full bg-white/10 text-white border border-white/20 backdrop-blur-sm whitespace-nowrap">
+                            <span className="text-xs px-3 py-1 rounded-full bg-white/10 text-white border border-white/20 whitespace-nowrap">
                                 {project.category}
                             </span>
                         </div>
