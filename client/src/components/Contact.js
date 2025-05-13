@@ -47,7 +47,7 @@ const Contact = () => {
       id="contact-section"
       className="min-h-screen w-full flex flex-col items-center justify-center py-20 px-4 text-white"
     >
-      <h2 className="text-4xl md:text-5xl font-bold text-white mb-12">Let's Connect</h2>
+      <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center">Let's Connect</h2>
 
       <div className="w-full max-w-xl bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6 sm:p-8 shadow-lg">
         <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">

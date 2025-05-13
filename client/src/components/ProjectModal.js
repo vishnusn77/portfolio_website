@@ -72,7 +72,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
           <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-5">{project.title}</h2>
 
           <div className="flex gap-4 overflow-x-auto mb-5 pb-1 -mx-1 px-1">
-            {project.images.map((img, index) => (
+            {project.images.slice(1).map((img, index) => (
               <div key={index} className="relative w-60 h-36 shrink-0">
                 {!loadedImages.includes(index) && (
                   <div className="absolute inset-0 flex items-center justify-center bg-gray-100/20">

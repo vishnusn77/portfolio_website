@@ -60,8 +60,8 @@ const About = () => {
       id="about-section"
       className="min-h-screen w-full flex flex-col items-center justify-center px-4 py-20 bg-transparent"
     >
-      <h2 className="text-4xl md:text-5xl font-bold text-white mb-12">
-        About Me
+      <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center">
+        My Journey
       </h2>
 
       <div className="w-full max-w-5xl">

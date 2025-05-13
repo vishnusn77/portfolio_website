@@ -13,34 +13,39 @@ const expertiseItems = [
     title: 'Web Development',
     description:
       `• Develop web apps using modern tech stacks\n• Focus on clean architecture and performance optimization`,
+    techStack: ['React', 'Next.js', 'Angular', 'TypeScript', 'Redux', 'Vite'],
   },
   {
     icon: <FaMobileAlt className="text-[#61DAFB] mr-2" />,
     title: 'Mobile Development',
     description:
-      `• Build cross-platform apps with React Native\n• Ensure smooth performance on iOS and Android`,
+      `• Build cross-platform and native mobile applications  \n• Ensure seamless performance on iOS and Android`,
+    techStack: ['React Native', 'Flutter', 'Expo', 'Swift', 'Xcode'],
   },
   {
     icon: <MdOutlineDesignServices className="text-[#61DAFB] mr-2" />,
     title: 'Responsive UI Design',
     description:
-    `• Design flexible interfaces with Tailwind CSS\n• Optimize layouts for all screen sizes`,
+    `• Design user-friendly UIs with consistent structure\n• Maintain responsiveness across all viewports seamlessly`,
+    techStack: ['Tailwind CSS', 'Bootstrap', 'CSS Grid', 'Flexbox', 'Material UI'],
   },
   {
     icon: <BiSolidServer className="text-[#61DAFB] mr-2" />,
     title: 'RESTful API Development',
     description:
-      `• Build scalable APIs with Node.js and Express\n• Ensure secure data handling and integration`,
+      `• Build scalable RESTful backend services\n• Securely manage data, auth, and integrations`,
+    techStack: ['Node.js', 'Express', 'PostgreSQL', 'MongoDB', 'JWT', 'OAuth'],
   },
   {
     icon: <IoMdCloudUpload className="text-[#61DAFB] mr-2" />,
     title: 'Cloud Deployment',
     description:
-      `• Deploy dockerized apps on AWS/Azure\n• Automate builds and releases with CI/CD`,
+      `• Deploy containerized applications to cloud platforms\n• Automate builds, testing, and production releases`,
+    techStack: ['Docker', 'AWS', 'Azure', 'GitHub Actions', 'Nginx', 'CI/CD'],
   },
 ];
 
-const ExpertiseItem = ({ icon, title, description, isOpen, onToggle }) => {
+const ExpertiseItem = ({ icon, title, description, techStack = [], isOpen, onToggle }) => {
 
   return (
     <div
@@ -63,6 +68,20 @@ const ExpertiseItem = ({ icon, title, description, isOpen, onToggle }) => {
       >
         <div className="overflow-hidden">
           <p className="text-gray-300 text-sm mt-2 leading-relaxed text-left whitespace-pre-line">{description}</p>
+            <div
+              className={`mt-3 flex flex-wrap gap-2 transition-all duration-300 ${
+                isOpen ? 'opacity-100 max-h-[200px] mt-3' : 'opacity-0 max-h-0'
+              } overflow-hidden`}
+            >
+              {techStack.map((tech, i) => (
+                <span
+                  key={i}
+                  className="text-xs bg-white/10 text-white px-2 py-1 rounded-full border border-white/20"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
         </div>
       </div>
     </div>
@@ -78,7 +97,7 @@ const Expertise = () => {
       id="expertise-section"
       className="min-h-screen w-full px-4 py-20 flex flex-col items-center justify-center"
     >
-      <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
+      <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center">
         What I Focus On
       </h2>
       <div className="max-w-5xl w-full flex flex-col md:flex-row gap-10">
@@ -89,6 +108,7 @@ const Expertise = () => {
               icon={item.icon}
               title={item.title} 
               description={item.description} 
+              techStack={item.techStack}
               isOpen={openIndex === index}
               onToggle={() => setOpenIndex(openIndex === index ? null : index)}
               />

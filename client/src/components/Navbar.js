@@ -88,7 +88,7 @@ const Navbar = () => {
                     className="hover:text-[#0FFCBE] transition px-4 sm:px-0 py-2 text-center"
                 >
                     <ShinyText
-                        text="About"
+                        text="Experience"
                         speed={3}
                         disabled={false}
                         className="text-base"
