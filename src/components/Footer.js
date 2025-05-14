@@ -2,16 +2,28 @@ import React, { useEffect, useState } from 'react';
 
 const Footer = () => {
   const [likes, setLikes] = useState(0);
+  const [isLiking, setIsLiking] = useState(false);
 
   useEffect(() => {
-    const storedLikes = localStorage.getItem('portfolioLikes');
-    if (storedLikes) setLikes(parseInt(storedLikes, 10));
+    fetch('/.netlify/functions/likeCounter')
+      .then(res => res.json())
+      .then(data => {
+        if (data.count !== undefined) setLikes(data.count);
+      })
+      .catch(console.error);
   }, []);
 
-  const handleLike = () => {
-    const updated = likes + 1;
-    setLikes(updated);
-    localStorage.setItem('portfolioLikes', updated.toString());
+  const handleLike = async () => {
+    if (isLiking) return;
+    setIsLiking(true);
+    try {
+      const res = await fetch('/.netlify/functions/likeCounter', { method: 'POST' });
+      const data = await res.json();
+      if (data.count !== undefined) setLikes(data.count);
+    } catch (err) {
+      console.error('Like failed:', err);
+    }
+    setIsLiking(false);
   };
 
   return (
@@ -19,6 +31,7 @@ const Footer = () => {
       <span>© {new Date().getFullYear()} Vishnu Nair. All rights reserved.</span>
       <button
         onClick={handleLike}
+        disabled={isLiking}
         className="flex items-center gap-1 text-xs text-white/60 hover:text-[#40ffaa] transition border border-white/20 px-2 py-1 rounded-full bg-white/5 hover:bg-white/10"
       >
         ❤️ {likes} Likes
