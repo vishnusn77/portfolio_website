@@ -124,7 +124,9 @@ const Home = () => {
         </div>
 
         <div className="relative w-full flex justify-center items-center">
-          <LogoMarquee skills={skills} />
+          <div className="w-screen relative -mx-6 overflow-hidden">
+            <LogoMarquee skills={skills} />
+          </div>
             <Button
               className="absolute mt-[13rem] animate-bounce-down"
               onClick={() =>

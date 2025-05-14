@@ -6,13 +6,12 @@ const LogoMarquee = ({ skills }) => {
   return (
     <div className="relative w-full py-6 overflow-hidden">
 
-      <div className="absolute left-0 top-0 h-full w-12 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
+      <div className="absolute left-0 top-1/2 -translate-y-1/2 h-[35%] w-12 bg-gradient-to-r from-[#00000e] to-transparent z-10 pointer-events-none" />
       
-      <div className="absolute right-0 top-0 h-full w-12 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 h-[32%] w-12 bg-gradient-to-l from-[#00000e] to-transparent z-10 pointer-events-none" />
         <Marquee
           speed={40}
           gradient={false}
-          
           className="py-6"
         >
           {repeatedSkills.map((item, idx) => (
