@@ -61,10 +61,9 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
           style={{ maxHeight: '85vh' }}
           onClick={(e) => e.stopPropagation()}
         >
-          {/* Close Button */}
           <button
             onClick={onClose}
-            className="absolute top-3 right-3 w-8 h-8 rounded-md bg-white/10 backdrop-blur border border-white/10 text-white hover:bg-white/20 transition-all duration-200 flex items-center justify-center text-base font-bold"
+            className="absolute top-3 right-3 w-8 h-8 rounded-md bg-white/10 border border-white/10 text-white hover:bg-white/20 transition-all duration-200 flex items-center justify-center text-base font-bold"
           >
             &times;
           </button>
@@ -97,19 +96,17 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
           </p>
 
           <div className="flex items-center justify-between flex-wrap gap-y-3 mt-4">
-            {/* Tech stack */}
             <div className="flex flex-wrap gap-2">
               {project.technologies.map((tech, idx) => (
                 <span
                   key={idx}
-                  className="px-3 py-1 text-xs sm:text-sm rounded-full bg-white/10 text-white border border-white/10 backdrop-blur-md"
+                  className="px-3 py-1 text-xs sm:text-sm rounded-full bg-white/10 text-white border border-white/10"
                 >
                   {tech}
                 </span>
               ))}
             </div>
 
-            {/* Button */}
             <a
               href={project.link}
               target="_blank"
