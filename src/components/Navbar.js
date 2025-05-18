@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import logo from '../assets/vishnu_logo.png';
+import logo from '../assets/vn_logo.png';
 import ShinyText from '../react-bits-components/ShinyText';
 
 const Navbar = () => {
